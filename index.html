@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Nathen Watters">
-  <meta name="description" content="Website of Nathen Watters, Colorado.">
-  <title>Nathen Watters</title>
+  <meta name="author" content="Henry Granados">
+  <meta name="description" content="Website of Henry Granados , Colorado.">
+  <title>Henry Granados</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
@@ -39,15 +39,15 @@
         </button>
 
         <!-- items that won't collapse on smaller screens -->
-        <a class="navbar-brand" href="#">Nathen Watters</a>
       </div>
 
       <!-- nav links that will collapse on smaller screens -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" style = "font-size:18px;">
           <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="https://github.com/henrygranados" target="_blank">GitHub</a></li>
           <li><a href="#skills">Skills</a></li>
+		  <li><a href="Resume_Henry.pdf" target="_blank">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -59,13 +59,27 @@
     <div class="jumbotron">
       <div class="container">
         <div id="welcome-message">
-          <p>Welcome to the official site of</p>
-          <h1>Nathen Watters</h1>
+          <h1 style = "
+  color: #F5F4F0;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}">Henry Granados</h1>
         </div>
+		<br/>
         <ul id="list-of-services">
-          <li><i class="fa fa-check-square-o"></i> Web Developer</li>
           <li><i class="fa fa-check-square-o"></i> Test Automation Engineer</li>
-          <li><i class="fa fa-check-square-o"></i> Android/Mobile App. Developer</li>
+          <li><i class="fa fa-check-square-o"></i> Web Developer</li>
+		  <li><i class="fa fa-check-square-o"></i> Software Developer</li>
         </ul>
       </div>
     </div><!-- end of jumbotron -->
@@ -75,90 +89,30 @@
       <div class="row">
         <div class="col-xs-12 text-justify">
           <p>
-            Welcome, I am Nathen Watters, native of northern Colorado. I am an enthusiast of all
-            things technology, but emphatically so when it comes to front end development for 
-            web and mobile applications.
+            
+I’m very passionate about developing software, capable of creating basic to advanced 
+projects in most of the programming languages. I'm well versed in website 
+development, software and enhancing applications. I can develop basic to advanced projects. Can work on variety of applications.
+Some of my skills include: Software Engineering, 
+Web Development, Android applications and a growing understanding of the computer science enviroment. 
+
           </p>
           <p>
-            But my passion doesn't <em>just</em> lie with your typical front end development. My background
-            in tech. began with building circuits and programming embedded systems. With the 
-            advent of Cloud Computing and the Internet of Things the need for fluid interfaces
-            between embedded devices with the web and mobile devices is growing. And that is 
-            where I come in.
+            
           </p>
           <p>
-            My current stack consists of HTML, CSS, JavaScript, jQuery, Bootstrap and Django for
-            web development, Android for mobile computing, and Selenium WebDriver for
-            constructing automation tests to run against web applications to ensure the apps work
-            as expected.
+            
           </p>
           <p>
-            You can find examples of my work <a href="#portfolio">below:</a>
+            
           </p>
         </div>
       </div>
     </section>
 
-    <h2 id="portfolio"><i class="fa fa-th-list"></i> Portfolio</h2>
-    <section class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/gpemulator.jpg" alt="Guitar Player Emulator" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="gpe.html">Guitar Player Emulator</a></h2>
-          <p>Apparatus that, when mounted on top of a six-string guitar, emulates the motion of playing chords on the guitar. Servos perform the act of strumming the strings, and solenoids act as fingers pressing down on the chords at various fret positions.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/instagram.PNG" alt="Instagram Search App" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="http://wattersnathen.github.io/instagram-search" target="_blank">Instagram Search</a></h2>
-          <p>Search Instagram photos by tag. Used Angular.js with animations and $http.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/blackjack.PNG" alt="Blackjack" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="http://wattersnathen.github.io/blackjack" target="_blank">Classic Blackjack</a></h2>
-          <p>Play a game of blackjack against the computer.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/shopping-list-snapshot.JPG" alt="Shopping List" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="http://wattersnathen.github.io/shopping-list-app" target="_blank">Shopping List</a></h2>
-          <p>Using JavaScript, jQuery and the localStorage API to keep track of items in your shopping list. Then when items are in the list, use jQuery-UI to drag and drop items between lists.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/quiz-app-snapshot.JPG" alt="Quiz about tigers" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="http://wattersnathen.github.io/quiz-app/" target="_blank">Interactive Quiz</a></h2>
-          <p>Test your knowledge of tigers with this interactive quiz. Used jQuery and JavaScript objects to go between questions, and keep track of the results.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
-          <img src="images/youtube-search-snapshot.PNG" alt="Simple YouTube Search" class="img-thumbnail img-styles">
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
-          <h2><a href="http://wattersnathen.github.io/youtube-search/" target="_blank">Simple YouTube Search</a></h2>
-          <p>Use this site to search for videos found on YouTube. AJAX was used to make the request against <a href="https://developers.google.com/youtube/v3/" target="_blank">YouTube's v3 API</a>.</p>
-        </div>
-      </div>
-    </section>
 
     <section id="skills" class="container">
-      <h2><i class="fa fa-th-list"></i> Skills</h2>
+      <h2>Skills</h2>
       <div class="row">
         <article class="col-xs-12 col-sm-5 col-md-4 col-md-offset-2 skills-between">
           <h4>Web Development</h4>
@@ -166,18 +120,17 @@
             <li><i class="fa fa-thumbs-o-up"></i> HTML</li>
             <li><i class="fa fa-thumbs-o-up"></i> CSS</li>
             <li><i class="fa fa-thumbs-o-up"></i> JavaScript</li>
-            <li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
+			<li><i class="fa fa-thumbs-o-up"></i> Angular.js</li>
+			<li><i class="fa fa-thumbs-o-up"></i> Node.js</li>
+			<li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
             <li><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Bootstrap</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Django</li>
           </ul>
         </article>
         <article class="col-xs-12 col-sm-5 col-md-4 skills-between">
           <h4>Software Development</h4>
           <ul class="skills-list">
-            <li><i class="fa fa-thumbs-o-up"></i> Python</li>
+		    <li><i class="fa fa-thumbs-o-up"></i> C/C++</li>
             <li><i class="fa fa-thumbs-o-up"></i> Java</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Android</li>
             <li><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</li>
             <li><i class="fa fa-thumbs-o-up"></i> Data-Driven Test Automation</li>
           </ul>
@@ -186,19 +139,17 @@
     </section>
 
   </div><!-- end of content -->
-  
+   <h2>Contact me at:</h2>
+<center><p>henrygranados03@gmail.com</p></center>
   <!-- footer (contact section, social media, ...) -->
   <footer id="contact">
     <ul>
       <li><a href="#content"><i class="fa fa-arrow-up"></i> Top</a></li>
-      <li><a href="NWattersResume.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Resum&eacute; (PDF)</a></li>
     </ul>
     <ul class="social-media-links">
       <p>Connect with me:</p>
-      <li><a href="https://www.linkedin.com/in/nathenwatters" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
-      <li><a href="https://twitter.com/NathenWatters" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-      <li><a href="https://github.com/wattersnathen" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
-      <li><a href="mailto:wattersnathen@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a></li>
+      <li><a href="https://github.com/henrygranados" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+      <li><a href="mailto:henrygranados03@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a></li>
     </ul>
   </footer>
 
