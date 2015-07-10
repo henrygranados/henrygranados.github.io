@@ -1,67 +1,235 @@
-<style>
-  @font-face {
-      font-family: "Fira Sans";
-      src: url(/fonts/FiraOpenType/fira_sans/FiraSansOT-Regular.otf) format("opentype");
-  }
-  html {
-    font-family: "Fira Sans", sans-serif;
-    background: #E8EDED;
-  }
-  body {
-
-  }
-  h1 {
-    text-align: center;
-    margin: 5px;
-  }	
-  #my_pic {
-    width: 140px;
-    margin: 0 auto;
-  }
-  .container {
-    width: 600px;
-    height: 220px;
-    padding: 10px;
-    margin: 20px auto;
-    border-radius: 10px;
-    background: #D5E1C9;
-    box-shadow: 0 0 2px 2px #A8B899;
-  }
-  #column_left {
-    width: 25%;
-    float: left;
-  }
-  #column_right {
-    width: 75%;
-    float: left;
-  }
-</style>
-<!DOCTYPE html 
-      PUBLIC "-//W3C//DTD HTML 4.01//EN"
-      "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-US">
-<head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon" 
-      type="image/png" 
-      href="favicon.png">
-<title>Henry Granados Software Developer</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Nathen Watters">
+  <meta name="description" content="Website of Nathen Watters, Colorado.">
+  <title>Nathen Watters</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .row { padding: 20px 0; }
+    .row:nth-child(even) { background: white; }
+    .row:nth-child(odd) { background: #f3f3f3; }
+    .img-styles { box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.75); margin: 0 auto; }
+    .col-between h2 { text-align: center; }
+    .col-between p { text-align: justify; }
+    .col-between img { max-width: 100%; height: auto; }
+    .navbar-default { border-bottom: 2px solid black; }
+    @media (min-width: 590px) { .jumbotron { min-height: 320px; } #welcome-message p { margin-left: 5em; } #list-of-services { margin-left: 8em;}}
+    @media (min-width: 590px) and (max-width: 767px) { .col-between, .skills-between { width: 45%; } }
+    @media (min-width: 767px) { .col-between img { height: 220px; width: 240px; } .col-between h2 { text-align: left; }}
+    @media (min-width: 957px) { #welcome-message p { margin-left: 15em; } #list-of-services { margin-left: 23em;} }
+  </style>
+</head>
 <body>
-<div class="container">
-<h1>I build and create software</h1>
-<div id="column_left">
-<img id="my_pic" src="img/me.jpg">
-</div>
-<div id="column_right">
 
-I can develop basic to advanced projects. Can work on variety of applications.
-Some of my skills include: <br/>Software Engineering, Web Development, Android applications and a growing understanding of the computer science enviroment.
-<br><br>
-</div>
-</div>
-<div class="container">
-  <center><h3 align="justify" style=" -moz-box-shadow:3px 3px 5px 6px #5F5F61;-webkit-box-shadow: 3px 3px 5px 6px #5F5F61;box-shadow:3px 3px 5px 6px #000000;padding-bottom:20px; padding-top:20px; padding-right: 20px; padding-left:20px; border-right:20px; border-radius:20px; font-family: sans-serif;font-size: 17px; color:#ffffff; font-weight: 300; font-style: normal; background-color:#54B7C4">I'm a very passionate developer. I develop software in <strong>Denver, Colorado</strong>. 
-                 I can develop basic to advanced projects. Can work on variety of applications.
-            Some of my skills include: Software Engineering, Web Development, Android applications and a growing understanding of the computer science enviroment.
-                 </h3></center>
-</div>
-</body></html>
+  <!-- navbar fixed to top -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- items that won't collapse on smaller screens -->
+        <a class="navbar-brand" href="#">Nathen Watters</a>
+      </div>
+
+      <!-- nav links that will collapse on smaller screens -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- end of navigation -->
+
+  <div id="content">
+    
+    <div class="jumbotron">
+      <div class="container">
+        <div id="welcome-message">
+          <p>Welcome to the official site of</p>
+          <h1>Nathen Watters</h1>
+        </div>
+        <ul id="list-of-services">
+          <li><i class="fa fa-check-square-o"></i> Web Developer</li>
+          <li><i class="fa fa-check-square-o"></i> Test Automation Engineer</li>
+          <li><i class="fa fa-check-square-o"></i> Android/Mobile App. Developer</li>
+        </ul>
+      </div>
+    </div><!-- end of jumbotron -->
+
+    <section id="about" class="container">
+      <h2>About</h2>
+      <div class="row">
+        <div class="col-xs-12 text-justify">
+          <p>
+            Welcome, I am Nathen Watters, native of northern Colorado. I am an enthusiast of all
+            things technology, but emphatically so when it comes to front end development for 
+            web and mobile applications.
+          </p>
+          <p>
+            But my passion doesn't <em>just</em> lie with your typical front end development. My background
+            in tech. began with building circuits and programming embedded systems. With the 
+            advent of Cloud Computing and the Internet of Things the need for fluid interfaces
+            between embedded devices with the web and mobile devices is growing. And that is 
+            where I come in.
+          </p>
+          <p>
+            My current stack consists of HTML, CSS, JavaScript, jQuery, Bootstrap and Django for
+            web development, Android for mobile computing, and Selenium WebDriver for
+            constructing automation tests to run against web applications to ensure the apps work
+            as expected.
+          </p>
+          <p>
+            You can find examples of my work <a href="#portfolio">below:</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <h2 id="portfolio"><i class="fa fa-th-list"></i> Portfolio</h2>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/gpemulator.jpg" alt="Guitar Player Emulator" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="gpe.html">Guitar Player Emulator</a></h2>
+          <p>Apparatus that, when mounted on top of a six-string guitar, emulates the motion of playing chords on the guitar. Servos perform the act of strumming the strings, and solenoids act as fingers pressing down on the chords at various fret positions.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/instagram.PNG" alt="Instagram Search App" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="http://wattersnathen.github.io/instagram-search" target="_blank">Instagram Search</a></h2>
+          <p>Search Instagram photos by tag. Used Angular.js with animations and $http.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/blackjack.PNG" alt="Blackjack" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="http://wattersnathen.github.io/blackjack" target="_blank">Classic Blackjack</a></h2>
+          <p>Play a game of blackjack against the computer.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/shopping-list-snapshot.JPG" alt="Shopping List" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="http://wattersnathen.github.io/shopping-list-app" target="_blank">Shopping List</a></h2>
+          <p>Using JavaScript, jQuery and the localStorage API to keep track of items in your shopping list. Then when items are in the list, use jQuery-UI to drag and drop items between lists.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/quiz-app-snapshot.JPG" alt="Quiz about tigers" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="http://wattersnathen.github.io/quiz-app/" target="_blank">Interactive Quiz</a></h2>
+          <p>Test your knowledge of tigers with this interactive quiz. Used jQuery and JavaScript objects to go between questions, and keep track of the results.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-2 col-between">
+          <img src="images/youtube-search-snapshot.PNG" alt="Simple YouTube Search" class="img-thumbnail img-styles">
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-5 col-between">
+          <h2><a href="http://wattersnathen.github.io/youtube-search/" target="_blank">Simple YouTube Search</a></h2>
+          <p>Use this site to search for videos found on YouTube. AJAX was used to make the request against <a href="https://developers.google.com/youtube/v3/" target="_blank">YouTube's v3 API</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2><i class="fa fa-th-list"></i> Skills</h2>
+      <div class="row">
+        <article class="col-xs-12 col-sm-5 col-md-4 col-md-offset-2 skills-between">
+          <h4>Web Development</h4>
+          <ul class="skills-list">
+            <li><i class="fa fa-thumbs-o-up"></i> HTML</li>
+            <li><i class="fa fa-thumbs-o-up"></i> CSS</li>
+            <li><i class="fa fa-thumbs-o-up"></i> JavaScript</li>
+            <li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Bootstrap</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Django</li>
+          </ul>
+        </article>
+        <article class="col-xs-12 col-sm-5 col-md-4 skills-between">
+          <h4>Software Development</h4>
+          <ul class="skills-list">
+            <li><i class="fa fa-thumbs-o-up"></i> Python</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Java</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Android</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Data-Driven Test Automation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </div><!-- end of content -->
+  
+  <!-- footer (contact section, social media, ...) -->
+  <footer id="contact">
+    <ul>
+      <li><a href="#content"><i class="fa fa-arrow-up"></i> Top</a></li>
+      <li><a href="NWattersResume.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Resum&eacute; (PDF)</a></li>
+    </ul>
+    <ul class="social-media-links">
+      <p>Connect with me:</p>
+      <li><a href="https://www.linkedin.com/in/nathenwatters" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+      <li><a href="https://twitter.com/NathenWatters" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+      <li><a href="https://github.com/wattersnathen" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+      <li><a href="mailto:wattersnathen@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a></li>
+    </ul>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    // navbar collapse
+    $(".navbar-nav li a").click(function(event) {
+        $(".navbar-collapse").collapse('hide');
+    });
+    $(".carousel").carousel({
+      interval: false
+    });
+
+    // smooth scrolling
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top-100
+          }, 1000);
+          return false;
+        }
+      }
+    });
+
+  });
+  </script>
+</body>
+</html>
