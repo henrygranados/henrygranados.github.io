@@ -136,8 +136,11 @@ div#wrapper {
   </style>
   <script>
 function validateForm() {
-    var x = document.forms["myForm"]["name"].value;
-    if (x == null || x == "") {
+    var a = document.forms["myForm"]["name"].value;
+	var b = document.forms["myForm"]["email"].value;
+	var c = document.forms["myForm"]["phone"].value;
+	var d = document.forms["myForm"]["message"].value;
+    if (a == null || a == "" || b == null || b == "" || c == null || c == "" || d == null || d == "") {
 	var overlay = document.getElementById('overlay');
 	var specialBox = document.getElementById('specialBox');
 	overlay.style.opacity = .6;
