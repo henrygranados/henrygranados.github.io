@@ -15,18 +15,7 @@
 #contactForm{
   font-size:32px;
   color: #F2F3FA;
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+  text-shadow:2px 1px 5px #79BAC7;
 }	
 	
 textarea{ 
@@ -111,7 +100,7 @@ function validateForm() {
 	var b = document.forms["myForm"]["email"].value;
 	var c = document.forms["myForm"]["phone"].value;
 	var d = document.forms["myForm"]["message"].value;
-    if (a == null || a == "" || b == null || b == "" || c == null || c == "" || d == null || d == "") {
+    if (a == null || a == "" || b == null || b == "" || d == null || d == "") {
 	var overlay = document.getElementById('overlay');
 	var specialBox = document.getElementById('specialBox');
 	overlay.style.opacity = .6;
@@ -252,12 +241,13 @@ Web Development, Android applications and a growing understanding of the compute
   <div id="specialBox" style = "border-radius:10px;background:#EDEEF7;">
   <div id="dialogboxhead"></div>
   
-  <button style = "color:white;float:right;font-size:25px;padding-right:10px;padding-left:10px;background:#AB0A1D;border-radius:10px;"onmousedown="toggleOverlay()">X</button>
+  <button style = "color:white;float:right;font-size:20px;padding-right:10px;padding-left:10px;background:#AB0A1D;border-radius:10px;"onmousedown="toggleOverlay()">X</button>
   <br/><br/><br/><br/>
-  <p style = "color: red;font-size:16px; text-align:center;">Please, all fields are required...</p> 
+  <p style = "color: red;font-size:16px; text-align:center;">Missing fields</p> 
+  <p style = "color: red;font-size:16px; text-align:center;">(Please, fill out form)</p> 
   
 </div>
-  <section style = "background-color:#A4A5AB;">
+  <section style = "background-color:#83838A;">
   
   <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
       onsubmit="return validateForm()" method="POST">
@@ -273,7 +263,7 @@ Web Development, Android applications and a growing understanding of the compute
 				
 				<br>
 		   
-				<input class="input" type="text" name="phone" placeholder = "Phone"value="">
+				<br/><input class="input" type="text" name="phone" placeholder = "Phone (optional)"value="">
 			
 				<br>
 				<textarea name="message" rows="5" placeholder = "Message" style="height:150px;width:300px;"cols="34" rows="6"></textarea>
@@ -283,13 +273,10 @@ Web Development, Android applications and a growing understanding of the compute
   </form>
   <br/>
   </section>
-<!-- End Special Centered Box -->
-<!-- Start Normal Page Content -->
+
 <div id="wrapper">
   
 </div>
- 
-  <!-- footer (contact section, social media, ...) -->
   <footer id="contact">
     <ul>
       <li><a href="#content"><i class="fa fa-arrow-up"></i>Top</a></li>
