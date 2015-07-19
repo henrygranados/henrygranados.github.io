@@ -11,35 +11,6 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
   <link rel="stylesheet" href="styles/main.css">
   <style>
-#dialogbox > div{ background:#FFF; border: 2px solid #AFB2B3;border-radius: 6px;}
-#dialogbox > div > #dialogboxhead{font-size:19px; padding:10px; color:#FFFFFF; text-align:center; 
-
-background: #4c4c4c; /* Old browsers */
-background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2b2b2b 76%, #1c1c1c 91%, #2c2c2c 100%, #111111 100%, #131313 100%, #111111 101%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#2c2c2c), color-stop(100%,#111111), color-stop(100%,#131313), color-stop(101%,#111111)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* IE10+ */
-background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
-
-
-
-
-}
-#dialogbox > div > #dialogboxbody{font-size:20px; padding:50px; color:#000000; text-align: center; 
-background:#F0F6F7;
-}
-#dialogbox > div > #dialogboxfoot{text-align:center; padding:10px;
-background: #F0F6F7;
-}
-#dialogbox > div > #dialogboxfoot2{text-align:center; padding:25px;
-background: #F0F6F7;
-}  
- 
-
-
-
  
 #contactForm{
   font-size:32px;
@@ -157,12 +128,9 @@ function validateForm() {
 		specialBox.style.display = "block";
 		return false;
 	    }
-        //alert("Name must be filled out");
-        //return false;
+        
     }
 }
-</script>
-<script>
 function toggleOverlay(){
 	var overlay = document.getElementById('overlay');
 	var specialBox = document.getElementById('specialBox');
