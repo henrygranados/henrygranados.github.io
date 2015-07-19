@@ -11,6 +11,116 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
   <link rel="stylesheet" href="styles/main.css">
   <style>
+#dialogbox > div{ background:#FFF; border: 2px solid #AFB2B3;border-radius: 6px;}
+#dialogbox > div > #dialogboxhead{font-size:19px; padding:10px; color:#FFFFFF; text-align:center; 
+
+background: #4c4c4c; /* Old browsers */
+background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2b2b2b 76%, #1c1c1c 91%, #2c2c2c 100%, #111111 100%, #131313 100%, #111111 101%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#2c2c2c), color-stop(100%,#111111), color-stop(100%,#131313), color-stop(101%,#111111)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* IE10+ */
+background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2b2b2b 76%,#1c1c1c 91%,#2c2c2c 100%,#111111 100%,#131313 100%,#111111 101%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
+
+
+
+
+}
+#dialogbox > div > #dialogboxbody{font-size:20px; padding:50px; color:#000000; text-align: center; 
+background:#F0F6F7;
+}
+#dialogbox > div > #dialogboxfoot{text-align:center; padding:10px;
+background: #F0F6F7;
+}
+#dialogbox > div > #dialogboxfoot2{text-align:center; padding:25px;
+background: #F0F6F7;
+}  
+ 
+
+
+
+ 
+#contactForm{
+  font-size:32px;
+  color: #F2F3FA;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}	
+	
+textarea{ 
+	width:250px; 
+	height:60px; 
+	border-radius:4px;
+	box-shadow:0px 0px 1px 2px #C9C9C3;
+	margin-top:10px;
+	padding:5px;
+	border:none;
+	}	
+.input{ 
+	width:250px;
+	height:32px; 
+	border-radius:4px;
+	box-shadow:0px 0px 1px 2px #C9C9C3; 
+	margin-top:10px;
+	padding:5px;
+	border:none;
+	margin-bottom:20px;
+	}
+.submit{
+	color:white;
+	border-radius:4px;
+	background: #1F8DD6;
+	padding:5px;
+	margin-top:40px;
+	border:none;
+	width:100px; 
+	height:30px;
+	box-shadow:0px 0px 1px 2px #123456;
+	font-size:16px;	   
+	}
+.submit:hover{
+   background:#060E7D;
+   box-shadow:0px 0px 1px 2px #123456;
+}
+   
+  div#overlay {
+	display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+div#specialBox {
+	display: none;
+	position: relative;
+	z-index: 3;
+	margin: 0px auto 0px auto;
+	width: 400px; 
+	height: 200px;
+	background: #FFF;
+	color: #000;
+}
+div#wrapper {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	padding-left:24px;
+}
     .row { padding: 20px 0; }
     .row:nth-child(even) { background: white; }
     .row:nth-child(odd) { background: #f3f3f3; }
@@ -24,9 +134,48 @@
     @media (min-width: 767px) { .col-between img { height: 220px; width: 240px; } .col-between h2 { text-align: left; }}
     @media (min-width: 957px) { #welcome-message p { margin-left: 15em; } #list-of-services { margin-left: 23em;} }
   </style>
+  <script>
+function validateForm() {
+    var x = document.forms["myForm"]["name"].value;
+    if (x == null || x == "") {
+	var overlay = document.getElementById('overlay');
+	var specialBox = document.getElementById('specialBox');
+	overlay.style.opacity = .6;
+	  if(overlay.style.display == "block"){
+		overlay.style.display = "none";
+		overlay.style.top = "100px";
+		specialBox.style.display = "none";
+		document.getElementById('dialogboxhead').innerHTML = "Mensaje";
+        document.getElementById('dialogboxbody').innerHTML = dialog;
+		
+		return false;
+	  } else {
+		overlay.style.display = "block";
+		specialBox.style.display = "block";
+		return false;
+	    }
+        //alert("Name must be filled out");
+        //return false;
+    }
+}
+</script>
+<script>
+function toggleOverlay(){
+	var overlay = document.getElementById('overlay');
+	var specialBox = document.getElementById('specialBox');
+	overlay.style.opacity = .8;
+	if(overlay.style.display == "block"){
+		overlay.style.display = "none";
+		specialBox.style.display = "none";
+	} else {
+		overlay.style.display = "block";
+		specialBox.style.display = "block";
+	}
+}
+</script>
 </head>
 <body>
-
+<div id="overlay"></div>
   <!-- navbar fixed to top -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -37,8 +186,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
-        <!-- items that won't collapse on smaller screens -->
       </div>
 
       <!-- nav links that will collapse on smaller screens -->
@@ -48,7 +195,7 @@
           <li><a href="https://github.com/henrygranados" target="_blank">GitHub</a></li>
           <li><a href="#skills">Skills</a></li>
 		  <li><a href="Resume_Henry.pdf" target="_blank">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="fa fa-envelope fa-lg">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -77,9 +224,9 @@
         </div>
 		<br/>
         <ul id="list-of-services">
+		  <li><i class="fa fa-check-square-o"></i> Software Developer</li>
           <li><i class="fa fa-check-square-o"></i> Test Automation Engineer</li>
           <li><i class="fa fa-check-square-o"></i> Web Developer</li>
-		  <li><i class="fa fa-check-square-o"></i> Software Developer</li>
         </ul>
       </div>
     </div><!-- end of jumbotron -->
@@ -139,28 +286,52 @@ Web Development, Android applications and a growing understanding of the compute
     </section>
 
   </div><!-- end of content -->
+  <div id="specialBox" style = "border-radius:10px;background:#EDEEF7;">
+  <div id="dialogboxhead"></div>
   
-  <form action="//formspree.io/henrygranados03@gmail.com"
-      method="POST">
-    Name: <input type="text" name="name"><br/>
-    Email: <input type="email" name="_replyto"><br/>
-	Message :<textarea name="textarea" id="comments" style="height:100px;" placeholder="Write your message..."></textarea>
-    <input type="submit" value="Send">
-</form>
+  <button style = "color:white;float:right;font-size:25px;padding-right:10px;padding-left:10px;background:#AB0A1D;border-radius:10px;"onmousedown="toggleOverlay()">X</button>
+  <br/><br/><br/><br/>
+  <p style = "color: red;font-size:20px; text-align:center;">Please, all fields are required...</p> 
   
+</div>
+  <section style = "background-color:#BFBFC7;">
   
+  <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
+      onsubmit="return validateForm()" method="POST">
+    <h2 id = "contactForm">Contact &nbsp;&nbsp;Form</h2>
+
+				<br>
+				
+				<input class="input" type="text" name="name" placeholder = "Name"value="">
+				
+				<br/>
+		 
+				<input class="input" type="text" name="email" placeholder = "Email"value="">
+				
+				<br>
+		   
+				<input class="input" type="text" name="phone" placeholder = "Phone"value="">
+			
+				<br>
+				<textarea name="comment" rows="5" placeholder = "Message"cols="40"></textarea>
+				<br>
+				<input class="submit" type="submit" name="submit" value="Send"> 
+
+  </form>
+  <br/>
+  </section>
+<!-- End Special Centered Box -->
+<!-- Start Normal Page Content -->
+<div id="wrapper">
+  <h2>My web page heading</h2>
+  <p>Some web page content ...</p>
   
-   <h2>Contact me at:</h2>
-<center><p>henrygranados03@gmail.com</p></center>
+</div>
+ 
   <!-- footer (contact section, social media, ...) -->
   <footer id="contact">
     <ul>
-      <li><a href="#content"><i class="fa fa-arrow-up"></i> Top</a></li>
-    </ul>
-    <ul class="social-media-links">
-      <p>Connect with me:</p>
-      <li><a href="https://github.com/henrygranados" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
-      <li><a href="mailto:henrygranados03@gmail.com" target="_blank"><i class="fa fa-envelope fa-lg"></i></a></li>
+      <li><a href="#content"><i class="fa fa-arrow-up"></i>Top</a></li>
     </ul>
   </footer>
 
