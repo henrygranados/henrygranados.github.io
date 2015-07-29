@@ -113,10 +113,14 @@ footer ul li {
 }
 #testing{
 color:white;
-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-family: 'Open Sans', sans-serif;
+text-shadow: 0 0px 0 transparent;
+font-weight: 700;
+text-transform: uppercase;
 }
 #testing:hover{
 color:#333333;
+font-family: 'Open Sans', sans-serif;
 }
 #copy{
 font-family:arial;
@@ -124,4 +128,8 @@ color:#8C8C91;
 text-align:center;
 padding-bottom:0px;
 background:#26292B;
+}
+#henry{
+color:#F5F4F0;
+
 }
