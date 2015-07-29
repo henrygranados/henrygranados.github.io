@@ -45,7 +45,7 @@ a {
   //background: url(../images/mtns-background.jpg) no-repeat center center;
  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+91,207cca+100,7db9e8+100,207cca+100 */
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,000000+100;Black+3D+%231 */
-background: #262927;
+background: #2f2e2e;
 	
 
 
@@ -84,6 +84,7 @@ footer {
   text-align: center;
   border-top: 1px solid black;
   padding: 1em 0;
+  background:#26292B;
 }
 
 footer > * {
@@ -118,5 +119,9 @@ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 color:#333333;
 }
 #copy{
+font-family:arial;
+color:white;
 text-align:center;
+padding-bottom:0px;
+background:#26292B;
 }
