@@ -110,3 +110,13 @@ footer ul li {
   border-radius: 5px; 
 
 }
+#testing{
+color:white;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#testing:hover{
+color:#333333;
+}
+#copy{
+text-align:center;
+}
