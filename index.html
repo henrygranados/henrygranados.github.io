@@ -68,8 +68,30 @@ textarea{
   </style>
 </head>
 <body>
+<script>
+function validationForm(){
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["email"].value;
+  var z = document.forms["myForm"]["message"].value;
+  if(x == "" || x == null)
+  	{
+  	 alert("Name is required");
+  	 return false;
+  	}
+  	else if(y == "" || y = null)
+  	{
+  	alert("Email is required");
+  	 return false;
+  	}
+  	else if(z == "" || z == null){
+  	alert("Message is required");
+  	return false;
+  	}
+  }
+
+</script>
   <!-- navbar fixed to top -->
-  <nav style = "background:#AD031A;"class="navbar navbar-default navbar-fixed-top">
+  <nav style = "background:#4DBCD6;"class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -82,13 +104,13 @@ textarea{
 
       <!-- nav links that will collapse on smaller screens -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right" style = "font-size:21px;">
-          <li><a style = "color:white;font-family:arial;"href="#about">About</a></li>
-          <li><a style = "color:white;font-family:arial;"href="https://github.com/henrygranados" target="_blank">GitHub</a></li>
-          <li><a style = "color:white;font-family:arial;"href="#skills">Skills</a></li>
-          <li><a style = "color:white;font-family:arial;"href="#projects">Projects</a></li>
-		  <li><a style = "color:white;font-family:arial;"href="Resume_Henry.pdf" target="_blank">Resume</a></li>
-          <li><a style = "color:white;font-family:arial;"href="#contactForm">Contact</a></li>
+        <ul class="nav navbar-nav navbar-right" style = "font-size:15px;">
+          <li><a id = "testing" href="#about">ABOUT</a></li>
+          <li><a id = "testing" "href="https://github.com/henrygranados" target="_blank">GITHUB</a></li>
+          <li><a id = "testing" href="#skills">SKILLS</a></li>
+          <li><a id = "testing" href="#projects">PROJECTS</a></li>
+		  <li><a id = "testing" href="Resume_Henry.pdf" target="_blank">RESUME</a></li>
+          <li><a id = "testing" href="#contactForm">CONTACT</a></li>
         </ul>
       </div>
     </div>
@@ -112,7 +134,7 @@ textarea{
       </div>
     </div><!-- end of jumbotron -->
   <section>
-  <br/><br/>
+  <br/>
   </section>
     <section id="about" class="container">
 
@@ -171,17 +193,16 @@ Web Development, Android applications and a growing understanding of the compute
   <section style = "background-color:#43464A;">
   
   <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
-      onsubmit="return validateForm()" method="POST">
+      onsubmit="return validationForm()" method="POST">
 	  <br/>
     <h2 id = "contactForm">Contact &nbsp;&nbsp;Form</h2>
 
 				<br/>
 				
-				<input class="input" type="text" name="name" placeholder = "Name"value="" required>
-				
+				<input class="input" type="text" name="fname" id = "name" placeholder = "Name" required>
 				<br/>
 		 
-				<input class="input" type="text" name="email" placeholder = "Email"value="" required>
+				<input class="input" type="email" name="email" placeholder = "Email"value=""required>
 				
 				<br/>
 		   
@@ -205,6 +226,7 @@ Web Development, Android applications and a growing understanding of the compute
       <li><a target = "_blank" href = "https://www.linkedin.com/pub/henry-granados/a5/768/666"><i class="fa fa-linkedin fa-3x"></i></a></li>
     </ul>
   </footer>
+  <p id="copy">Copyright © 2015 - All Rights Reserved</p>
   <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -233,6 +255,8 @@ Web Development, Android applications and a growing understanding of the compute
     });
 
   });
+  
+  
   </script>
 </body>
 </html>
