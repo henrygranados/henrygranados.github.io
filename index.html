@@ -11,60 +11,6 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
   <link rel="stylesheet" href="styles/main.css">
   <style>
- 
-#contactForm{
-  font-size:32px;
-  color: #F2F3FA;
-  text-shadow:2px 1px 5px #79BAC7;
-}	
-	
-textarea{ 
-	width:250px; 
-	height:60px; 
-	border-radius:4px;
-	box-shadow:0px 0px 1px 2px #636469;
-	margin-top:20px;
-	padding:5px;
-	border:none;
-	}	
-.input{ 
-	width:250px;
-	height:32px; 
-	border-radius:4px;
-	box-shadow:0px 0px 1px 2px #636469; 
-	margin-top:10px;
-	padding:5px;
-	border:none;
-	margin-bottom:20px;
-	}
-.submit{
-	color:white;
-	border-radius:4px;
-	background: #1F8DD6;
-	padding:5px;
-	margin-top:40px;
-	border:none;
-	width:100px; 
-	height:30px;
-	box-shadow:0px 0px 1px 2px #123456;
-	font-size:16px;	   
-	}
-.submit:hover{
-   background:#060E7D;
-   box-shadow:0px 0px 1px 2px #123456;
-}
-    .row { padding: 20px 0; }
-    .row:nth-child(even) { background: white; }
-    .row:nth-child(odd) { background: #f3f3f3; }
-    .img-styles { box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.75); margin: 0 auto; }
-    .col-between h2 { text-align: center; }
-    .col-between p { text-align: justify; }
-    .col-between img { max-width: 100%; height: auto; }
-    .navbar-default { border-bottom: 2px solid black; }
-    @media (min-width: 590px) { .jumbotron { min-height: 320px; } #welcome-message p { margin-left: 5em; } #list-of-services { margin-left: 8em;}}
-    @media (min-width: 590px) and (max-width: 767px) { .col-between, .skills-between { width: 45%; } }
-    @media (min-width: 767px) { .col-between img { height: 220px; width: 240px; } .col-between h2 { text-align: left; }}
-    @media (min-width: 957px) { #welcome-message p { margin-left: 15em; } #list-of-services { margin-left: 23em;} }
   </style>
 </head>
 <body>
@@ -122,6 +68,7 @@ function validationForm(){
       <div class="container">
         <div id="welcome-message">
         <br/><br/>
+        
           <h1 id = "henry">Henry  Granados</h1>
         </div>
 		<br/>
@@ -134,50 +81,42 @@ function validationForm(){
     </div><!-- end of jumbotron -->
     <section id="about" class="container">
 
-      <h2>About</h2>
+      <h2><i class="fa fa-align-justify"></i>&nbsp;&nbsp;About</h2>
       <div class="row">
-        <div style = "border:0px solid black;background:#f3f3f3;
-        -webkit-box-shadow: 7px 7px 5px -5px rgba(0,0,0,0.75);
--moz-box-shadow: 7px 7px 5px -5px rgba(0,0,0,0.75);
-box-shadow: 7px 7px 5px -5px rgba(0,0,0,0.75);
         
-        
-        color:#000000;"class="bor2 col-xs-12 text-justify">
-          <p>
             
-I’m very passionate about developing software, capable of creating basic to advanced 
+I’m very passionate about developing software. Capable of creating basic to advanced 
 projects in most of the programming languages. I'm well versed in website 
 development, software and enhancing applications.
 Some of my skills include: Software Engineering, 
 Web Development, Android applications and a growing understanding of the computer science enviroment. 
-
-          </p>
         
-        </div>
+        
       </div>
     </section>
 
-   <br/><br/><br/>
-    <section id="skills" class="container">
-      <h2><i class="fa fa-list-alt"></i>  Skills</h2>
-      <div class="row">
+   <br/><br/><br/><br/><br/>
+   <div style = "background:#F2F9FA;">
+  <section  class="container">
+      <h2><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Skills</h2>
+      <div class="row" style = "background:#F2F9FA;">
         <article class="col-xs-12 col-sm-5 col-md-4 col-md-offset-2 skills-between">
           <h4>Web Development</h4>
           <ul class="skills-list">
             <li><i class="fa fa-thumbs-o-up"></i> HTML</li>
             <li><i class="fa fa-thumbs-o-up"></i> CSS</li>
-			<li><i class="fa fa-thumbs-o-up"></i> PHP</li>
+            <li><i class="fa fa-thumbs-o-up"></i> PHP</li>
             <li><i class="fa fa-thumbs-o-up"></i> JavaScript</li>
-			<li><i class="fa fa-thumbs-o-up"></i> Angular.js</li>
-			<li><i class="fa fa-thumbs-o-up"></i> Node.js</li>
-			<li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Angular.js</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Node.js</li>
+      <li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
             <li><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</li>
           </ul>
         </article>
         <article class="col-xs-12 col-sm-5 col-md-4 skills-between">
           <h4>Software Development</h4>
           <ul class="skills-list">
-		    <li><i class="fa fa-thumbs-o-up"></i> C/C++</li>
+        <li><i class="fa fa-thumbs-o-up"></i> C/C++</li>
             <li><i class="fa fa-thumbs-o-up"></i> Java SE/EE Development</li>
             <li><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</li>
             <li><i class="fa fa-thumbs-o-up"></i> RESTful Web Services</li>
@@ -187,7 +126,8 @@ Web Development, Android applications and a growing understanding of the compute
         </article>
       </div>
     </section>
-    <br/>
+  </div>
+    
   <section style = "background-color:#31363A;">
   
   <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
@@ -217,11 +157,11 @@ Web Development, Android applications and a growing understanding of the compute
 
   <footer>
     <ul>
-      <li><a target = "_blank" href = "https://github.com/henrygranados"><i class="fa fa-github fa-3x"></i></a></li>&nbsp;&nbsp;&nbsp;
+      <li><a target = "_blank" href = "https://github.com/henrygranados"><i class="fa fa-github fa-3x" ></i></a></li>&nbsp;&nbsp;&nbsp;
       <li><a target = "_blank" href = "https://www.linkedin.com/pub/henry-granados/a5/768/666"><i class="fa fa-linkedin fa-3x"></i></a></li>
     </ul>
     <br/>
-    <p id="copy">Copyright © 2015 - All Rights Reserved</p>
+    <center><p id="copy">Copyright © 2015 - All Rights Reserved</p></center>
   </footer>
   
   <!-- JavaScript -->
