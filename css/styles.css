@@ -259,7 +259,6 @@ header {
 /* Banner */
 
 .bannerBkg {
-	//background: url(../images/main.jpg) no-repeat center center;
 	background-position:top center;
 	background:#2f2e2e;
 	color: #ffffff;
