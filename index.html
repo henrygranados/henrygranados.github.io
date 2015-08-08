@@ -1,318 +1,878 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Henry Granados">
-  <meta name="description" content="Website of Henry Granados , Colorado.">
-  <title>Henry Granados</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Henry Software Developer</title>
+<meta name="description" content="Website of Henry Granados , Colorado.">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/animations.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/colorbox.css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
-  <link rel="stylesheet" href="styles/main.css">
-  <style>
- 
-#contactForm{
-  font-size:32px;
-  color: #F2F3FA;
-  text-shadow:2px 1px 5px #79BAC7;
-}	
-	
-textarea{ 
-	width:250px; 
-	height:60px; 
-	border-radius:4px;
-	box-shadow:0px 0px 1px 2px #636469;
-	margin-top:20px;
-	padding:5px;
-	border:none;
-	}	
-.input{ 
-	width:250px;
-	height:32px; 
-	border-radius:4px;
-	box-shadow:0px 0px 1px 2px #636469; 
-	margin-top:10px;
-	padding:5px;
-	border:none;
-	margin-bottom:20px;
-	}
-.submit{
-	color:white;
-	border-radius:4px;
-	background: #1F8DD6;
-	padding:5px;
-	margin-top:40px;
-	border:none;
-	width:100px; 
-	height:30px;
-	box-shadow:0px 0px 1px 2px #123456;
-	font-size:16px;	   
-	}
-.submit:hover{
-   background:#060E7D;
-   box-shadow:0px 0px 1px 2px #123456;
-}
-   
-  div#overlay {
-	display: none;
-	z-index: 2;
-	background: #000;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	text-align: center;
-}
-div#specialBox {
-	display: none;
-	position: relative;
-	z-index: 3;
-	margin: 0px auto 0px auto;
-	width: 300px; 
-	height: 200px;
-	background: #FFF;
-	color: #000;
-}
-div#wrapper {
-	position:absolute;
-	top: 0px;
-	left: 0px;
-	padding-left:24px;
-}
-    .row { padding: 20px 0; }
-    .row:nth-child(even) { background: white; }
-    .row:nth-child(odd) { background: #f3f3f3; }
-    .img-styles { box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.75); margin: 0 auto; }
-    .col-between h2 { text-align: center; }
-    .col-between p { text-align: justify; }
-    .col-between img { max-width: 100%; height: auto; }
-    .navbar-default { border-bottom: 2px solid black; }
-    @media (min-width: 590px) { .jumbotron { min-height: 320px; } #welcome-message p { margin-left: 5em; } #list-of-services { margin-left: 8em;}}
-    @media (min-width: 590px) and (max-width: 767px) { .col-between, .skills-between { width: 45%; } }
-    @media (min-width: 767px) { .col-between img { height: 220px; width: 240px; } .col-between h2 { text-align: left; }}
-    @media (min-width: 957px) { #welcome-message p { margin-left: 15em; } #list-of-services { margin-left: 23em;} }
-  </style>
-  <script>
-function validateForm() {
-    var a = document.forms["myForm"]["name"].value;
-	var b = document.forms["myForm"]["email"].value;
-	var c = document.forms["myForm"]["phone"].value;
-	var d = document.forms["myForm"]["message"].value;
-    if (a == null || a == "" || b == null || b == "" || d == null || d == "") {
-	var overlay = document.getElementById('overlay');
-	var specialBox = document.getElementById('specialBox');
-	overlay.style.opacity = .6;
-	  if(overlay.style.display == "block"){
-		overlay.style.display = "none";
-		overlay.style.top = "100px";
-		specialBox.style.display = "none";
-		document.getElementById('dialogboxhead').innerHTML = "Mensaje";
-        document.getElementById('dialogboxbody').innerHTML = dialog;
-		
-		return false;
-	  } else {
-		overlay.style.display = "block";
-		specialBox.style.display = "block";
-		return false;
-	    }
-        
+  
+  
+  <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.20/angular.js" data-semver="1.2.20"></script>
+    <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="js/app.js"></script>
+	 <link data-require="bootstrap-css@3.x" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+
+
+
+<!--[if IE]>
+<style type="text/css">
+	.bannerTextSmall {
+    	margin-top:25px;
+    }    
+</style>
+<![endif]-->
+
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Goudy+Bookletter+1911::latin', 'Raleway:400,300,500,700:latin', 'Open+Sans:400italic,400:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+</script>
+
+<script src="js/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+	$(document).ready(function(){
+	$(".inline").colorbox({inline:true, width:"53%"});
+	});
+</script>
+<script type="text/javascript" src="js/javascript.js"> </script>
+<script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 2;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
     }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
 }
-function toggleOverlay(){
-	var overlay = document.getElementById('overlay');
-	var specialBox = document.getElementById('specialBox');
-	overlay.style.opacity = .8;
-	if(overlay.style.display == "block"){
-		overlay.style.display = "none";
-		specialBox.style.display = "none";
-	} else {
-		overlay.style.display = "block";
-		specialBox.style.display = "block";
+</script> 
+
+<script>
+	$(window).scroll(function() {
+		$('#designIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#developmentIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn2");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#newsletterIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn3");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#socialIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn4");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#twitterIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+
+<script type="text/javascript">
+function showHide(shID) {
+	if (document.getElementById(shID)) {
+		if (document.getElementById(shID+'-show').style.display != 'none') {
+			document.getElementById(shID+'-show').style.display = 'none';
+			document.getElementById(shID).style.display = 'block';
+		}
+		else {
+			document.getElementById(shID+'-show').style.display = 'inline';
+			document.getElementById(shID).style.display = 'none';
+		}
 	}
 }
 </script>
+
 </head>
 <body>
-<div id="overlay"></div>
-  <!-- navbar fixed to top -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
 
-      <!-- nav links that will collapse on smaller screens -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right" style = "font-size:18px;">
-          <li><a href="#about">About</a></li>
-          <li><a href="https://github.com/henrygranados" target="_blank">GitHub</a></li>
-          <li><a href="#skills">Skills</a></li>
-		  <li><a href="Resume_Henry.pdf" target="_blank">Resume</a></li>
-          <li><a href="#contact" class="fa fa-envelope fa-lg">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav><!-- end of navigation -->
+<header class="nav-down">
+	<div class="navWrapper">
+	<div class="navbar1">
+    	<ul id="top-menu">
+  			<li class="active">
+			
+    			<a href="#home">HOME</a>
+  			</li>
+  			<li>
+    			<a href="#about">ABOUT</a>
+  			</li>
+  			<li>
+    			<a href="#work">SKILLS</a>
+  			</li>
+  			<li>
+    			<a href="#projects">PROJECTS</a>
+  			</li>
+			<li>
+    			<a id = "testing" href="Resume_Henry.pdf" target="_blank">RESUME</a>
+  			</li>
+			<li>
+    			<a href="#contact">CONTACT</a>
+  			</li>
+		</ul>
+	</div>
+	<div class="navbar2">
+			<div class="accordionButton">MENU</div>
+			<div class="accordionContent">
+				<a href="/">HOME</a><br>
+				<div class="divLine"></div>
+				<a href="#about">ABOUT</a><br>
+				<div class="divLine"></div>
+				<a href ="github">GITHUB</a>
+				<a href="#work">WORK</a><br>
+				<div class="divLine"></div>
+				<a href="#store">STORE</a><br>
+				<div class="divLine"></div>
+				<a href="#contact">CONTACT</a><br>
+		</div>
+	</div>
+       
+  </div>
+</header>
 
-  <div id="content">
-    
-    <div class="jumbotron">
+<a id = "home"></a>
+<div class="bannerBkg">
+	<div class="bannerWrapper">
+		<div class="jumbotron">
       <div class="container">
         <div id="welcome-message">
-          <h1 style = "
-  color: #F5F4F0;
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-}">Henry Granados</h1>
-        </div>
-		<br/>
-        <ul id="list-of-services">
-		  <li><i class="fa fa-check-square-o"></i> Software Developer</li>
-          <li><i class="fa fa-check-square-o"></i> Test Automation Engineer</li>
-          <li><i class="fa fa-check-square-o"></i> Web Developer</li>
-        </ul>
-      </div>
-    </div><!-- end of jumbotron -->
-
-    <section id="about" class="container">
-      <h2>About</h2>
-      <div class="row">
-        <div class="col-xs-12 text-justify">
-          <p>
-            
-I’m very passionate about developing software, capable of creating basic to advanced 
-projects in most of the programming languages. I'm well versed in website 
-development, software and enhancing applications. I can develop basic to advanced projects. Can work on variety of applications.
-Some of my skills include: Software Engineering, 
-Web Development, Android applications and a growing understanding of the computer science enviroment. 
-
-          </p>
+        <br/><br/>
         
+          <h1 id = "henry" style = "color:white;">Henry  Granados</h1>
         </div>
+		<br/><br/>
+        <ul id="list-of-services">
+		  <li style = "font-size:25px; font-family: arial;"><i class="fa fa-check-square-o fa-1x"></i> Software Developer</li><br/>
+		  <li style = "font-size:25px; font-family:arial;"><i class="fa fa-check-square-o fa-1x"></i> Web Developer</li><br/>
+		  <li style = "font-size:25px; font-family:arial;"><i class="fa fa-check-square-o fa-1x"></i> Test Automation Engineer</li><br/>
+		  </ul>
       </div>
-    </section>
-
-
-    <section id="skills" class="container">
-      <h2>Skills</h2>
-      <div class="row">
-        <article class="col-xs-12 col-sm-5 col-md-4 col-md-offset-2 skills-between">
-          <h4>Web Development</h4>
-          <ul class="skills-list">
-            <li><i class="fa fa-thumbs-o-up"></i> HTML</li>
-            <li><i class="fa fa-thumbs-o-up"></i> CSS</li>
-			<li><i class="fa fa-thumbs-o-up"></i> PHP</li>
-            <li><i class="fa fa-thumbs-o-up"></i> JavaScript</li>
-			<li><i class="fa fa-thumbs-o-up"></i> Angular.js</li>
-			<li><i class="fa fa-thumbs-o-up"></i> Node.js</li>
-			<li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</li>
-          </ul>
-        </article>
-        <article class="col-xs-12 col-sm-5 col-md-4 skills-between">
-          <h4>Software Development</h4>
-          <ul class="skills-list">
-		    <li><i class="fa fa-thumbs-o-up"></i> C/C++</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Java</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</li>
-            <li><i class="fa fa-thumbs-o-up"></i> Data-Driven Test Automation</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-  </div><!-- end of content -->
-  <div id="specialBox" style = "border-radius:10px;background:#EDEEF7;">
-  <div id="dialogboxhead"></div>
-  
-  <button style = "color:white;float:right;font-size:20px;padding-right:10px;padding-left:10px;background:#AB0A1D;border-radius:10px;"onmousedown="toggleOverlay()">X</button>
-  <br/><br/><br/><br/>
-  <p style = "color: red;font-size:16px; text-align:center;">Missing fields</p> 
-  <p style = "color: red;font-size:16px; text-align:center;">(Please, fill out form)</p> 
-  
+    </div>
+    </div>
 </div>
-  <section style = "background-color:#83838A;">
-  
-  <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
-      onsubmit="return validateForm()" method="POST">
-	  <br/>
-    <h2 id = "contactForm">Contact &nbsp;&nbsp;Form</h2>
+	
+<div class="tagline">
+    <a href="#intro" id="example-show" class="showLink" onclick="showHide('example');return false;"><div class="storeFooter"><i class="fa fa-chevron-circle-down fa-3x"></i></div></a>
 
-				<br>
+	<div class="taglineWrapper">
+	<br/>
+    	I <strong>build</strong> &amp; <strong>create</strong> software.
+    </div>
+</div> 
+
+<div class="servicesWrapper">
+  <div class="servicesBox">
+  		<div class="servicesWebDesign">
+    		<div class="servicesCircle"><i class="fa fa-pencil-square-o" style = "font-size:70px;" id = "designIcon"></i></div>
+        	<br/><div class="servicesTitle"><strong>WEBSITE DESIGN</strong></div>
+        	<div class="servicesDivide1"></div>
+			I provide Intuitive design that allows users to have better interaction.
+        	</div>
+	</div>
+  <div class="servicesBox">
+  		<div class="servicesDevelopment">
+    		<div class="servicesCircle"><i class="fa fa-code" style = "font-size:70px;" id="developmentIcon"/></i></div>
+        	<br/><div class="servicesTitle"><strong>WEB DEVELOPMENT</strong></div>
+        	<div class="servicesDivide2"></div>
+			Can build dynamic websites and web apps accessibles on all devices.
+        </div>
+	</div>
+  <div class="servicesBox">
+  		<div class="servicesNewsletter">
+    		<div class="servicesCircle"><i class="fa fa-cog" style = "font-size:70px;" alt="Newsletter Design" id="newsletterIcon"/></i></div>
+        	<br/><div class="servicesTitle"><strong>SOFTWARE DEVELOPMENT</strong></div>
+        	<div class="servicesDivide3"></div>
+			Software Developer with Good understanding of the Computer Science environment.	 
+         </div>
+	</div>
+	<div class="servicesBoxLast">
+    	<div class="servicesSocial">
+    		<div class="servicesCircle"><i class="fa fa-wrench" style = "font-size:70px;" id = "socialIcon"></i></div>
+        	<br/><div class="servicesTitle"><strong>TEST AUTOMATION</strong></div>
+        	<div class="servicesDivide4"></div>
+			Professional Test Automation Engineer
+        </div>    
+	</div>
+</div>
+
+
+<div class="bigSpace"></div>
+<a id="about"></a>
+<div class="aboutPc">
+	<div class="aboutOctopus"><a><img class="grayscale" style = "-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;" src="images/henry.jpg" class="grayscale" width="280" height="280" alt="octopus"/></a></div>
+  <div class="aboutText">
+    	<h1>About Me</h1>
+    I’m very passionate about developing software. Capable of creating basic to advanced projects in most of the programming languages. I'm well versed in website development, software and enhancing applications. Some of my skills include: Software Engineering, Web Development,
+	Android applications and a growing understanding of the computer science enviroment.
+    </div>
+    <div class="space"></div>
+</div>
+
+<div class="twitterBkg">
+			<div class="taglineWrapper">
+    			
+				<div id = "tweets_txt">
+				Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.
+				~Brian Kernighan
+			
+				</div>
+                
+    <a href="#" id="example-show" class="showLink" onclick="showHide('example');return false;"><div class="storeFooter"><i class="fa fa-chevron-circle-down fa-3x"></i></div></a>
+    		</div>
+</div>
+
+
+
+
+<a id="work"></a>
+ 
+ <div style = "background:#D8D9D4;">
+    <div class="storeHeading"><span class="andFont"><i class="fa fa-list-alt"></i><strong> Skills</strong></span></div>
+
+<center>       
+  <table class="table">
+    <thead>
+      <tr>
+        <th style = "font-size:22px;font-family:arial;padding-bottom:30px;padding-right:30px;"><strong><u>Web Development</u></strong></th>
+		
+        <th style = "font-size:22px;font-family:arial;padding-bottom:30px;padding-right:30px;"><strong><u>Software Development</u></strong></th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	    
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> HTML</td>
+		<td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> C/C++</td>
+
+      </tr>
+      <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> CSS</td>
+		<td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Java SE/EE Development</td>
+
+      </tr>
+      <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> PHP</td>
+		<td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</td>
+
+      </tr>
+	  <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> JavaScript</td>
+		<td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> RESTful Web Services</td>
+
+      </tr>
+	  <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Angular.js</td>
+		<td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Data-Driven Test Automation</td>
+
+      </tr>
+	  <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Node.js</td>
+      </tr>
+	  <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Jquery</td>
+      </tr>
+	  <tr>
+        <td style = "font-family:'Roboto', sans-serif;"><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+
+  <a id = "projects"></a>
+    <div class="storeHeading"><span class="andFont"><i class="fa fa-align-justify"></i><strong> PROJECTS</strong></span></div>
+
+<div class="workGroup1">
+
+<a class='inline' href="#inline_content1">
+	<div class="yellowBox">
+    	<img src="images/java1.jpg" alt="" class="grow"/><br>
+        JAVA<br>
+        <div class="boxesInfo" style="color:#d76713">Font changing GUI</div>
+	</div>
+</a>
+
+<a class='inline' href="#inline_content2">
+	<div class="ltGreenBox">
+    	<img src="images/php1.jpg" alt="" class="grow"/><br>
+        PHP<br>
+        <div class="boxesInfo" style="color:#000000;">CONTACT FORM VALIDATION</div>
+	</div>
+</a>
+
+<a class='inline' href="#inline_content3">
+	<div class="ltOrangeBox">
+    	<img src="images/angularjs.gif" alt="House of Children" class="grow"/><br>
+        AngularJs<br>
+        <div class="boxesInfo" style="color:#fbd474">VALIDATION FORM USING ANGULARJS</div>
+	</div>
+</a>
+
+<a class='inline' href="#inline_content4">
+	<div class="dkOrangeBox">
+    	<img src="images/cplusplus.jpg" alt="One Greenville" class="grow"/><br>
+        C++<br>
+        <div class="boxesInfo" style="color:#e28100;">c++</div>
+	</div>
+</a>
+
+<a class='inline' href="#inline_content5">
+	<div class="ltOrangeBox">
+    	<img src="images/java2.jpg" alt="Solid Remodeling" class="grow"/><br>
+        Java<br>
+        <div class="boxesInfo" style="color:#fbd474">JAVA AND JDBC</div>
+	</div>
+</a>
+
+<a class='inline' href="#inline_content6">
+	<div class="dkGreenBox">
+    	<img src="images/phpmysql.jpg" alt="Team Fannypack" class="grow"/><br>
+        MYSQL & PHP<br>
+        <div class="boxesInfo" style="color:#e6e8bf;">REGISTRATION PAGE USING PHP & MYSQL</div>
+	</div>
+</a>   
+
+<a class='inline' href="#inline_content7">
+	<div class="yellowBox">
+    	<img src="images/angularjs2.png" alt="Adam Gidwitz" class="grow"/><br>
+        ANGULARJS<br>
+        <div class="boxesInfo" style="color:#d76713">ANGULARJS POP UP WINDOW</div>
+	</div>
+</a>  
+
+<a class='inline' href="#inline_content8">
+	<div class="ltGreenBox">
+    	<img src="images/ajaxjquery.jpg" alt="Keerti Films" class="grow"/><br>
+        AJAX & JQUERY<br>
+        <div class="boxesInfo" style="color:#000000;">AJAX CALL USING JQUERY</div>
+	</div>
+</a>    
+
+</div>
+
+
+<!--********************STARTING of PROJECTS PICS BUT ON MOBILE VERSION***************---->
+<div class="workGroup2">
+
+<a href="" target="_blank">
+	<div class="yellowBox">
+    	<img src="images/java1.jpg" alt="" class="grow"/><br>
+        JAVA<br>
+        <div class="boxesInfo" style="color:#d76713">JAVA GUI</div>
+	</div>
+</a>
+
+<a href="" target="_blank">
+	<div class="ltGreenBox">
+    	<img src="images/php1.jpg" alt="" class="grow"/><br>
+        PHP<br>
+        <div class="boxesInfo" style="color:#535C4F;">PHP</div>
+	</div>
+</a>
+
+<a href="" target="_blank">
+	<div class="ltOrangeBox">
+    	<img src="images/angularjs.gif" alt="" class="grow"/><br>
+        AngularJs<br>
+        <div class="boxesInfo" style="color:#fbd474">AngularJs</div>
+	</div>
+</a>
+
+<a href="" target="_blank">
+	<div class="dkOrangeBox">
+    	<img src="images/cplusplus.jpg" alt="" class="grow"/><br>
+        C++<br>
+        <div class="boxesInfo" style="color:#e28100;">C++</div>
+	</div>
+</a>
+
+<a href="" target="_blank">
+	<div class="dkGreenBox">
+    	<img src="images/java2.jpg" alt="" class="grow"/><br>
+        JAVA & JDBC<br>
+        <div class="boxesInfo" style="color:#e6e8bf;">JAVA & JDBC</div>
+	</div>
+</a>   
+
+<a href="" target="_blank">
+	<div class="ltGreenBox">
+    	<img src="images/phpmysql.jpg" alt="" class="grow"/><br>
+        MYSQL & PHP<br>
+        <div class="boxesInfo" style="color:#535C4F;">MYSQL & PHP</div>
+	</div>
+</a>    
+
+</div>
+<!--**********************ENDING OF PROJECTS MOBILE VERSION**********************************---->
+<!--*****************************************************************************************---->
+<div class="space"></div>
+
+
+
+
+<a id="store"></a>
+<div class="storeBkg">
+	<div class="storeWrapper">        
+    <a href="#" onclick="showHide('example');return false;">
+	<div class="storeFooter"><i class="fa fa-chevron-circle-down fa-3x"></i></div></a>
+    
+		<div id="example" class="more">
+		</div>
+    </div>
+</div>
+<a id="contact"></a>    
+<section style = "background-color:#31363A;">
+  <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
+      onsubmit="return validationForm()" method="POST">
+	  
+	  
+    <h2 style = "font-size:40px;">Contact &nbsp;&nbsp;me</h2>
 				
-				<input class="input" type="text" name="name" placeholder = "Name"value="">
-				
+				<input class="input" type="text" name="fname" id = "name" placeholder = "Name" required>
 				<br/>
 		 
-				<input class="input" type="text" name="email" placeholder = "Email"value="">
+				<input class="input" type="email" name="email" placeholder = "Email"value=""required>
 				
-				<br>
-		   
-				<br/><input class="input" type="text" name="phone" placeholder = "Phone (optional)"value="">
+				<br/>
+		   <input class="input" type="text" name="email" placeholder = "Phone (optional)"value="">
 			
+				<br/>
+				<textarea name="message" rows="5" placeholder = "Message" style="height:150px;width:300px;"cols="34" rows="6" required></textarea>
 				<br>
-				<textarea name="message" rows="5" placeholder = "Message" style="height:150px;width:300px;"cols="34" rows="6"></textarea>
-				<br>
-				<input class="submit" type="submit" name="submit" value="Send"> 
-
+				<input id="submit" type="submit" name="submit" value="Send"> 
+				
   </form>
-  <br/>
+  <br/><br/>
   </section>
-
-<div id="wrapper">
-  
-</div>
-  <footer id="contact">
+  <footer style = "background: #26292B;">
     <ul>
-      <li><a href="#content"><i class="fa fa-arrow-up"></i>Top</a></li>
+	<br/>
+      <center><li><a target = "_blank" href = "https://www.linkedin.com/pub/henry-granados/a5/768/666"><i class="fa fa-linkedin fa-3x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a target = "_blank" href = "https://github.com/henrygranados"><i class="fa fa-github fa-3x" ></i></li></a></center>
     </ul>
+    <br/>
+    <center><p id="copy" style = "color:white;">Copyright © 2015 - All Rights Reserved</p></center>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script>
-  $(document).ready(function() {
-    // navbar collapse
-    $(".navbar-nav li a").click(function(event) {
-        $(".navbar-collapse").collapse('hide');
-    });
-    $(".carousel").carousel({
-      interval: false
+<!--******************************STARTS of Little pop up windows************************************-->
+<!--************************************************************************************************-->
+
+<div style='display:none'>
+	<div id='inline_content1' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/java1.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">JAVA</div>
+             This is a simple program for changing the font of a text using JFRAME, JSWING, etc.
+          
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+			<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content2' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/php1.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">PHP</div>
+          This program shows how to validate data on a Contact Form using PHP. 
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content3' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/angularjs.gif" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">Validation Form Using AngularJs </div>
+           
+		 This program is a simple demo on validating a contact form using AngularJs
+			<br><br>
+             <div class="popUpBtn">Live Demo</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">Live Demo</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content4' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/cplusplus.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">C++</div>
+            C++ program
+			<br><br>
+    		<div class="popUpBtn">View Source</div>
+			<!--<a href="" target="_blank"><div class="popUpBtn">View Source</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content5' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/java2.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">JAVA & JDBC</div>
+			 This program shows a good understanding of how data could be retrieve using JAVA & JDBC driver.
+			<br><br>
+    		<div class="popUpBtn">View Source</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content6' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/phpmysql.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">PHP and MYSQL</div>
+            This program allows users to register on a registration page and have their information go straight to DataBase.
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+			 <!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content7' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/angularjs2.png" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">AngularJs Pop up window</div>
+			This program creates a pop up window using AngularJs
+			<br><br>
+    		<div class="popUpBtn">Live Demo</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">LAUNCH WEBSITE</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content8' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/ajaxjquery.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">AJAX and JQUERY</div>
+			This program allows to retrieve data from DataBase using AJAX and JQUERY
+			<br><br>
+    	<div class="popUpBtn">View Source Code</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+<!--******************************END OF POP UP WINDOWS*****************************************-->
+<!--********************************************************************************************-->
+
+<div style='display:none'>
+	<div id='inline_content9' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/stacked_zoom.png" alt="Stacked Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content11' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/endtoend_zoom.png" alt="End To End Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content12' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/peabo_zoom.png" alt="Peabo Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content13' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/the_right_stuff_zoom.png" alt="The Right Stuff Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content14' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/torple_zoom.png" alt="Torple Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content15' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/skewed_zoom.png" alt="Skewed Icons" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content16' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/fizzlebottom_zoom.png" alt="Fizzlebottom Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content17' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/gab_zoom.png" alt="Gab Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content18' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/dubbub_zoom.png" alt="DubBub Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content19' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/pleasantlyplump_zoom.png" alt="Pleasantly Plump Icons" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content20' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/quick_zoom.png" alt="Quick and Dirty Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content21' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/forfty_zoom.png" alt="Forfty Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content22' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/scribble_zoom.png" alt="Forfty Scribble Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content23' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/twoandtwo_zoom.png" alt="Two and Two Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+  
+<script>
+// Cache selectors
+var lastId,
+    topMenu = $("#top-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
     });
 
-    // smooth scrolling
-    $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top-100
-          }, 1000);
-          return false;
-        }
-      }
-    });
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 900);
+  e.preventDefault();
+});
 
-  });
-  </script>
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href=#"+id+"]").parent().addClass("active");
+   }                   
+});
+</script>
+
 </body>
 </html>
