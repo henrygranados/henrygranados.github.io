@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/colorbox.css" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
+<<<<<<< HEAD
   
   
   <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.20/angular.js" data-semver="1.2.20"></script>
@@ -219,6 +220,60 @@ function showHide(shID) {
        
   </div>
 </header>
+=======
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+  </style>
+</head>
+<body>
+<script>
+function validationForm(){
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["email"].value;
+  var z = document.forms["myForm"]["message"].value;
+  if(x == "" || x == null)
+  	{
+  	 alert("Name is required");
+  	 return false;
+  	}
+  	else if(y == "" || y = null)
+  	{
+  	alert("Email is required");
+  	 return false;
+  	}
+  	else if(z == "" || z == null){
+  	alert("Message is required");
+  	return false;
+  	}
+  }
+
+</script>
+  <!-- navbar fixed to top -->
+  <nav style = "background:#4DBCD6;"class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- nav links that will collapse on smaller screens -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" style = "font-size:14px;">
+          <li><a id = "testing" href="#about">ABOUT</a></li>
+          <li><a id = "testing" href="https://github.com/henrygranados" target="_blank">GITHUB</a></li>
+          <li><a id = "testing" href="#skills">SKILLS</a></li>
+          <li><a id = "testing" href="#projects">PROJECTS</a></li>
+		  <li><a id = "testing" href="Resume_Henry.pdf" target="_blank">RESUME</a></li>
+          <li><a id = "testing" href="#contactForm">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- end of navigation -->
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
 
 <a id = "home"></a>
 <div class="bannerBkg">
@@ -228,10 +283,15 @@ function showHide(shID) {
         <div id="welcome-message">
         <br/><br/>
         
+<<<<<<< HEAD
           <h1 id = "henry" style = "color:white;">Henry  Granados</h1>
+=======
+          <h1 id = "henry">Henry  Granados</h1>
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
         </div>
 		<br/><br/>
         <ul id="list-of-services">
+<<<<<<< HEAD
 		  <li style = "font-size:25px; font-family: arial;"><i class="fa fa-check-square-o fa-1x"></i> Software Developer</li><br/>
 		  <li style = "font-size:25px; font-family:arial;"><i class="fa fa-check-square-o fa-1x"></i> Web Developer</li><br/>
 		  <li style = "font-size:25px; font-family:arial;"><i class="fa fa-check-square-o fa-1x"></i> Test Automation Engineer</li><br/>
@@ -517,6 +577,71 @@ function showHide(shID) {
 	  
 	  
     <h2 style = "font-size:40px;">Contact &nbsp;&nbsp;me</h2>
+=======
+		  <li><i class="fa fa-check-square-o"></i> Software Developer</li>
+		  <li><i class="fa fa-check-square-o"></i> Web Developer</li>
+          <li><i class="fa fa-check-square-o"></i> Test Automation Engineer</li>
+        </ul>
+      </div>
+    </div><!-- end of jumbotron -->
+    <section id="about" class="container">
+
+      <h2><i class="fa fa-align-justify"></i>&nbsp;&nbsp;About</h2>
+      <div class="row">
+        
+            
+I’m very passionate about developing software. Capable of creating basic to advanced 
+projects in most of the programming languages. I'm well versed in website 
+development, software and enhancing applications.
+Some of my skills include: Software Engineering, 
+Web Development, Android applications and a growing understanding of the computer science enviroment. 
+        
+        
+      </div>
+    </section>
+
+   <br/><br/><br/><br/><br/>
+   <div style = "background:#F2F9FA;">
+  <section  id = "skills" class="container">
+      <h2><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Skills</h2>
+      <div class="row" style = "background:#F2F9FA;">
+        <article class="col-xs-12 col-sm-5 col-md-4 col-md-offset-2 skills-between">
+          <h4>Web Development</h4>
+          <ul class="skills-list">
+            <li><i class="fa fa-thumbs-o-up"></i> HTML</li>
+            <li><i class="fa fa-thumbs-o-up"></i> CSS</li>
+            <li><i class="fa fa-thumbs-o-up"></i> PHP</li>
+            <li><i class="fa fa-thumbs-o-up"></i> JavaScript</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Angular.js</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Node.js</li>
+      <li><i class="fa fa-thumbs-o-up"></i> jQuery</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Responsive Web Design</li>
+          </ul>
+        </article>
+        <article class="col-xs-12 col-sm-5 col-md-4 skills-between">
+          <h4>Software Development</h4>
+          <ul class="skills-list">
+        <li><i class="fa fa-thumbs-o-up"></i> C/C++</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Java SE/EE Development</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Selenium WebDriver</li>
+            <li><i class="fa fa-thumbs-o-up"></i> RESTful Web Services</li>
+            <li><i class="fa fa-thumbs-o-up"></i> Data-Driven Test Automation</li>
+
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+    
+  <section style = "background-color:#31363A;">
+  
+  <form name="myForm" action="//formspree.io/henrygranados03@gmail.com"
+      onsubmit="return validationForm()" method="POST">
+	  <br/>
+    <h2 id = "contactForm">Contact &nbsp;&nbsp;Form</h2>
+
+				<br/>
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
 				
 				<input class="input" type="text" name="fname" id = "name" placeholder = "Name" required>
 				<br/>
@@ -524,11 +649,17 @@ function showHide(shID) {
 				<input class="input" type="email" name="email" placeholder = "Email"value=""required>
 				
 				<br/>
+<<<<<<< HEAD
 		   <input class="input" type="text" name="email" placeholder = "Phone (optional)"value="">
+=======
+		   
+				<input class="input" type="text" name="phone" placeholder = "Phone (optional)"value="">
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
 			
 				<br/>
 				<textarea name="message" rows="5" placeholder = "Message" style="height:150px;width:300px;"cols="34" rows="6" required></textarea>
 				<br>
+<<<<<<< HEAD
 				<input id="submit" type="submit" name="submit" value="Send"> 
 				
   </form>
@@ -546,6 +677,35 @@ function showHide(shID) {
 
 <!--******************************STARTS of Little pop up windows************************************-->
 <!--************************************************************************************************-->
+=======
+				<input class="submit" type="submit" name="submit" value="Send"> 
+
+  </form>
+  <br/><br/>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a target = "_blank" href = "https://github.com/henrygranados"><i class="fa fa-github fa-3x" ></i></a></li>&nbsp;&nbsp;&nbsp;
+      <li><a target = "_blank" href = "https://www.linkedin.com/pub/henry-granados/a5/768/666"><i class="fa fa-linkedin fa-3x"></i></a></li>
+    </ul>
+    <br/>
+    <center><p id="copy">Copyright © 2015 - All Rights Reserved</p></center>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    // navbar collapse
+    $(".navbar-nav li a").click(function(event) {
+        $(".navbar-collapse").collapse('hide');
+    });
+    $(".carousel").carousel({
+      interval: false
+    });
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
 
 <div style='display:none'>
 	<div id='inline_content1' style='padding:20px; background:#fff;'>
@@ -839,6 +999,7 @@ var lastId,
       if (item.length) { return item; }
     });
 
+<<<<<<< HEAD
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
 menuItems.click(function(e){
@@ -874,5 +1035,11 @@ $(window).scroll(function(){
 });
 </script>
 
+=======
+  });
+  
+  
+  </script>
+>>>>>>> 622cb07cc82156883402f1487a5bd511c53dbd93
 </body>
 </html>
