@@ -6,11 +6,17 @@
 <meta name="description" content="Website of Henry Granados , Colorado.">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/devicons.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/animations.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/colorbox.css" />
-
   <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+  <script type="text/javascript" src="js/main.js"> </script>
+  <script type="text/javascript" src="js/modernizr.js"> </script>
+
 
 <!--[if IE]>
 <style type="text/css">
@@ -19,7 +25,38 @@
     }    
 </style>
 <![endif]-->
+<style type="text/css">
+.my_own_class_java{font-family: "devicons";font-size: 180px;}  .my_own_class_java:before{ content:"\e638"}
+.my_own_class_java:hover{
+  color: #000000;
+}
+.my_own_class_php{font-family: "devicons";font-size: 180px;}  .my_own_class_php:before{ content:"\e63d"}
+.my_own_class_php:hover{
+  color: #000000;
+}
+.my_own_class_angular{font-family: "devicons";font-size: 180px;}  .my_own_class_angular:before{ content:"\e653"}
+.my_own_class_angular:hover{
+  color: #000000;
+}
+.my_own_class_javascript{font-family: "devicons";font-size: 180px;}  .my_own_class_javascript:before{ content:"\e618"}
+.my_own_class_javascript:hover{
+  color: #000000;
+}
+.my_own_class_mysql{font-family: "devicons";font-size: 180px;}  .my_own_class_mysql:before{ content:"\e606"}
+.my_own_class_mysql:hover{
+  color: #000000;
+}
+.my_own_class_mysqlphp{font-family: "devicons";font-size: 180px;}  .my_own_class_mysqlphp:before{ content:"\e604"}
+.my_own_class_mysqlphp:hover{
+  color: #000000;
+}
+.my_own_class_ajax{font-size: 130px;} 
+.my_own_class_ajax:hover{
+  color: #000000;
+}
 
+
+</style>
 <script type="text/javascript">
   WebFontConfig = {
     google: { families: [ 'Goudy+Bookletter+1911::latin', 'Raleway:400,300,500,700:latin', 'Open+Sans:400italic,400:latin' ] }
@@ -363,6 +400,7 @@ function showHide(shID) {
   </table>
   </center>
 <br/><br/>
+
   <a id = "projects"></a>
     <div class="storeHeading"><span class="andFont"><i class="fa fa-align-justify"></i><strong> PROJECTS</strong></span></div>
 
@@ -370,7 +408,9 @@ function showHide(shID) {
 
 <a class='inline' href="#inline_content1">
 	<div class="yellowBox">
-    	<img src="images/java1.jpg" alt="" class="grow"/><br>
+      <br/><br/><br/>
+    	<span class="my_own_class_java grow"></span>
+      <br>
         JAVA<br>
         <div class="boxesInfo" style="color:#d76713">Font changing GUI</div>
 	</div>
@@ -378,7 +418,9 @@ function showHide(shID) {
 
 <a class='inline' href="#inline_content2">
 	<div class="ltGreenBox">
-    	<img src="images/php1.jpg" alt="" class="grow"/><br>
+      <br/><br/><br/>
+    	<span class="my_own_class_php grow"></span>
+      <br>
         PHP<br>
         <div class="boxesInfo" style="color:#000000;">CONTACT FORM VALIDATION</div>
 	</div>
@@ -386,7 +428,8 @@ function showHide(shID) {
 
 <a class='inline' href="#inline_content3">
 	<div class="ltOrangeBox">
-    	<img src="images/angularjs.gif" alt="House of Children" class="grow"/><br>
+    <br/><br/><br/>
+    	<span class="my_own_class_angular grow"></span><br>
         AngularJs<br>
         <div class="boxesInfo" style="color:#fbd474">VALIDATION FORM USING ANGULARJS</div>
 	</div>
@@ -394,23 +437,26 @@ function showHide(shID) {
 
 <a class='inline' href="#inline_content4">
 	<div class="dkOrangeBox">
-    	<img src="images/cplusplus.jpg" alt="One Greenville" class="grow"/><br>
-        C++<br>
-        <div class="boxesInfo" style="color:#e28100;">c++</div>
+    <br/><br/><br/>
+    	 <span class="my_own_class_javascript grow"></span><br>
+        Javascript<br>
+        <div class="boxesInfo" style="color:#e28100;">Javascript</div>
 	</div>
 </a>
 
 <a class='inline' href="#inline_content5">
 	<div class="ltOrangeBox">
-    	<img src="images/java2.jpg" alt="Solid Remodeling" class="grow"/><br>
-        Java<br>
+    <br/><br/><br/>
+    	<span class="my_own_class_mysql grow"></span><br>       
+       JAVA & JDBC<br>
         <div class="boxesInfo" style="color:#fbd474">JAVA AND JDBC</div>
 	</div>
 </a>
 
 <a class='inline' href="#inline_content6">
 	<div class="dkGreenBox">
-    	<img src="images/phpmysql.jpg" alt="Team Fannypack" class="grow"/><br>
+    <br/><br/><br/>
+    	 <span class="my_own_class_mysqlphp grow"></span><br> 
         MYSQL & PHP<br>
         <div class="boxesInfo" style="color:#e6e8bf;">REGISTRATION PAGE USING PHP & MYSQL</div>
 	</div>
@@ -418,17 +464,19 @@ function showHide(shID) {
 
 <a class='inline' href="#inline_content7">
 	<div class="yellowBox">
-    	<img src="images/angularjs2.png" alt="Adam Gidwitz" class="grow"/><br>
-        ANGULARJS<br>
-        <div class="boxesInfo" style="color:#d76713">ANGULARJS POP UP WINDOW</div>
+     <br/>
+    	<i class="my_own_class_ajax fa fa-chain-broken grow"></i><br> 
+        AJAX & JQUERY<br>
+        <div class="boxesInfo" style="color:#d76713">AJAX CALL USING JQUERY</div>
 	</div>
 </a>  
 
 <a class='inline' href="#inline_content8">
 	<div class="ltGreenBox">
-    	<img src="images/ajaxjquery.jpg" alt="Keerti Films" class="grow"/><br>
-        AJAX & JQUERY<br>
-        <div class="boxesInfo" style="color:#000000;">AJAX CALL USING JQUERY</div>
+     <br/><br/><br/>
+    	<span class="my_own_class_angular grow"></span><br> 
+        ANGULAR<br>
+        <div class="boxesInfo" style="color:#000000;">ANGULARJS POP UP WINDOW</div>
 	</div>
 </a>    
 
@@ -440,7 +488,7 @@ function showHide(shID) {
 
 <a href="" target="_blank">
 	<div class="yellowBox">
-    	<img src="images/java1.jpg" alt="" class="grow"/><br>
+    	<span class="my_own_class_java grow"></span>
         JAVA<br>
         <div class="boxesInfo" style="color:#d76713">JAVA GUI</div>
 	</div>
@@ -448,7 +496,7 @@ function showHide(shID) {
 
 <a href="" target="_blank">
 	<div class="ltGreenBox">
-    	<img src="images/php1.jpg" alt="" class="grow"/><br>
+    	<span class="my_own_class_php grow"></span>
         PHP<br>
         <div class="boxesInfo" style="color:#535C4F;">PHP</div>
 	</div>
@@ -456,7 +504,7 @@ function showHide(shID) {
 
 <a href="" target="_blank">
 	<div class="ltOrangeBox">
-    	<img src="images/angularjs.gif" alt="" class="grow"/><br>
+    	<span class="my_own_class_angular grow"></span><br>
         AngularJs<br>
         <div class="boxesInfo" style="color:#fbd474">AngularJs</div>
 	</div>
@@ -464,15 +512,15 @@ function showHide(shID) {
 
 <a href="" target="_blank">
 	<div class="dkOrangeBox">
-    	<img src="images/cplusplus.jpg" alt="" class="grow"/><br>
-        C++<br>
-        <div class="boxesInfo" style="color:#e28100;">C++</div>
+    	<span class="my_own_class_javascript grow"></span><br>
+        Javascript<br>
+        <div class="boxesInfo" style="color:#e28100;">Javascript</div>
 	</div>
 </a>
 
 <a href="" target="_blank">
 	<div class="dkGreenBox">
-    	<img src="images/java2.jpg" alt="" class="grow"/><br>
+    	<span class="my_own_class_mysql grow"></span><br>  
         JAVA & JDBC<br>
         <div class="boxesInfo" style="color:#e6e8bf;">JAVA & JDBC</div>
 	</div>
@@ -480,7 +528,7 @@ function showHide(shID) {
 
 <a href="" target="_blank">
 	<div class="ltGreenBox">
-    	<img src="images/phpmysql.jpg" alt="" class="grow"/><br>
+    	<span class="my_own_class_mysqlphp grow"></span><br> 
         MYSQL & PHP<br>
         <div class="boxesInfo" style="color:#535C4F;">MYSQL & PHP</div>
 	</div>
@@ -547,7 +595,7 @@ function showHide(shID) {
     	</div>
     	<div class="popUpRight">
     		<div class="popUpTitle">JAVA</div>
-             This is a simple program for changing the font of a text using JFRAME, JSWING, etc.
+             This is a simple program for changing the font of a text using JFRAME.
           
 			<br><br>
     		<div class="popUpBtn">View Source Code</div>
@@ -578,7 +626,7 @@ function showHide(shID) {
 <div style='display:none'>
 	<div id='inline_content3' style='padding:20px; background:#fff;'>
     	<div class="popUpLeft">
-    		<img src="images/angularjs.gif" alt="" />
+    		<img src="images/angularjs2.png" alt="" />  
     	</div>
     	<div class="popUpRight">
     		<div class="popUpTitle">Validation Form Using AngularJs </div>
@@ -596,11 +644,11 @@ function showHide(shID) {
 <div style='display:none'>
 	<div id='inline_content4' style='padding:20px; background:#fff;'>
     	<div class="popUpLeft">
-    		<img src="images/cplusplus.jpg" alt="" />
+    		<img src="images/javascript.png" alt="" />
     	</div>
     	<div class="popUpRight">
-    		<div class="popUpTitle">C++</div>
-            C++ program
+    		<div class="popUpTitle">Javascript</div>
+            Javascript program
 			<br><br>
     		<div class="popUpBtn">View Source</div>
 			<!--<a href="" target="_blank"><div class="popUpBtn">View Source</div></a>-->
@@ -613,7 +661,7 @@ function showHide(shID) {
 <div style='display:none'>
 	<div id='inline_content5' style='padding:20px; background:#fff;'>
     	<div class="popUpLeft">
-    		<img src="images/java2.jpg" alt="" />
+    		<img src="images/jdbc.png" alt="" />
     	</div>
     	<div class="popUpRight">
     		<div class="popUpTitle">JAVA & JDBC</div>
@@ -647,10 +695,10 @@ function showHide(shID) {
 <div style='display:none'>
 	<div id='inline_content7' style='padding:20px; background:#fff;'>
     	<div class="popUpLeft">
-    		<img src="images/angularjs2.png" alt="" />
+    		<img src="images/ajaxjquery.jpg" alt="" />
     	</div>
     	<div class="popUpRight">
-    		<div class="popUpTitle">AngularJs Pop up window</div>
+    		<div class="popUpTitle">AngularJs Pop up windowAJAX and JQUERY</div>
 			This program creates a pop up window using AngularJs
 			<br><br>
     		<div class="popUpBtn">Live Demo</div>
@@ -664,10 +712,10 @@ function showHide(shID) {
 <div style='display:none'>
 	<div id='inline_content8' style='padding:20px; background:#fff;'>
     	<div class="popUpLeft">
-    		<img src="images/ajaxjquery.jpg" alt="" />
+    	<img src="images/angularjs2.png" alt="" />	
     	</div>
     	<div class="popUpRight">
-    		<div class="popUpTitle">AJAX and JQUERY</div>
+    		<div class="popUpTitle">AngularJs Pop up window</div>
 			This program allows to retrieve data from DataBase using AJAX and JQUERY
 			<br><br>
     	<div class="popUpBtn">View Source Code</div>
