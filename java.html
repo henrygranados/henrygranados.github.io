@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Henry Software Developer</title>
+<meta name="description" content="Website of Henry Granados , Colorado.">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/devicons.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/animations.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/colorbox.css" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
+  <script type="text/javascript" src="js/main.js"> </script>
+  <script type="text/javascript" src="js/modernizr.js"> </script>
+  
+<script src='js/shBrushCss.js' type='text/javascript'></script>
+<script type="text/javascript" src="js/shBrushJava.js"></script>
+<script type="text/javascript" src="js/shBrushCss.js"></script>
+<link href="css/shCore.css" rel="stylesheet" type="text/css" />
+<script src="js/shCore.js" rel="stylesheet" type="text/css" </script>
+
+
+
+
+<!--[if IE]>
+<style type="text/css">
+	.bannerTextSmall {
+    	margin-top:25px;
+    }    
+</style>
+<![endif]-->
+<style type="text/css">
+.my_own_class_java{font-family: "devicons";font-size: 180px;}  .my_own_class_java:before{ content:"\e638"}
+.my_own_class_java:hover{
+  color: #000000;
+}
+.my_own_class_php{font-family: "devicons";font-size: 180px;}  .my_own_class_php:before{ content:"\e63d"}
+.my_own_class_php:hover{
+  color: #000000;
+}
+.my_own_class_angular{font-family: "devicons";font-size: 180px;}  .my_own_class_angular:before{ content:"\e653"}
+.my_own_class_angular:hover{
+  color: #000000;
+}
+.my_own_class_javascript{font-family: "devicons";font-size: 180px;}  .my_own_class_javascript:before{ content:"\e618"}
+.my_own_class_javascript:hover{
+  color: #000000;
+}
+.my_own_class_mysql{font-family: "devicons";font-size: 180px;}  .my_own_class_mysql:before{ content:"\e606"}
+.my_own_class_mysql:hover{
+  color: #000000;
+}
+.my_own_class_mysqlphp{font-family: "devicons";font-size: 180px;}  .my_own_class_mysqlphp:before{ content:"\e604"}
+.my_own_class_mysqlphp:hover{
+  color: #000000;
+}
+.my_own_class_ajax{font-size: 130px;} 
+.my_own_class_ajax:hover{
+  color: #000000;
+}
+
+
+</style>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Goudy+Bookletter+1911::latin', 'Raleway:400,300,500,700:latin', 'Open+Sans:400italic,400:latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); 
+</script>
+
+<script src="js/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+	$(document).ready(function(){
+	$(".inline").colorbox({inline:true, width:"53%"});
+	});
+</script>
+<script type="text/javascript" src="js/javascript.js"> </script>
+<script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 2;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script> 
+
+<script>
+	$(window).scroll(function() {
+		$('#designIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#developmentIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn2");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#newsletterIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn3");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#socialIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn4");
+			}
+		});
+	});
+</script>
+
+<script>
+	$(window).scroll(function() {
+		$('#twitterIcon').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+500) {
+				$(this).addClass("fadeIn");
+			}
+		});
+	});
+</script>
+
+<script type="text/javascript">
+function showHide(shID) {
+	if (document.getElementById(shID)) {
+		if (document.getElementById(shID+'-show').style.display != 'none') {
+			document.getElementById(shID+'-show').style.display = 'none';
+			document.getElementById(shID).style.display = 'block';
+		}
+		else {
+			document.getElementById(shID+'-show').style.display = 'inline';
+			document.getElementById(shID).style.display = 'none';
+		}
+	}
+}
+</script>
+
+</head>
+<body>
+
+<header class="nav-down">
+	<div class="navWrapper">
+	<div class="navbar1">
+    	<ul id="top-menu">
+  			<li class="active">
+			
+    			<a href="#home">HOME</a>
+  			</li>
+  			<li>
+    			<a href="#about">ABOUT</a>
+  			</li>
+  			<li>
+    			<a href="#work">SKILLS</a>
+  			</li>
+  			<li>
+    			<a href="#projects">PROJECTS</a>
+  			</li>
+			<li>
+    			<a id = "testing" href="Resume_Henry.pdf" target="_blank">RESUME</a>
+  			</li>
+			<li>
+    			<a href="#contact">CONTACT</a>
+  			</li>
+		</ul>
+	</div>
+	<div class="navbar2">
+			<div class="accordionButton">MENU</div>
+			<div class="accordionContent">
+				<a href="/">HOME</a><br>
+				<div class="divLine"></div>
+				<a href="#about">ABOUT</a><br>
+				<div class="divLine"></div>
+				<a href ="#work">SKILLS</a><br/>
+			     <div class="divLine"></div>
+				<a href="#projects">PROJECTS</a><br>
+				<div class="divLine"></div>
+				<a href="Resume_Henry.pdf">RESUME</a><br>
+				<div class="divLine"></div>
+				<a href="#contact">CONTACT</a>
+		</div>
+	</div>
+       
+  </div>
+</header>
+
+<a id = "home"></a>
+<br/><br/><br/>
+ <div style = "background:#D8D9D4;">
+    <div class="storeHeading"><span class="andFont"><i class="fa fa-list-alt"></i><strong>Font and Style GUI</strong></span></div>
+
+<center>       
+  <table class="table">
+    <thead>
+     
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	    <img src = "img/javafont.png"/> 
+       
+      </tr>
+    </tbody>
+  </table>
+  </center>
+<br/><br/>
+
+  <a id = "projects"></a>
+    <div class="storeHeading"><span class="andFont"><i class="fa fa-align-justify"></i><strong>Source Code</strong></span></div>
+   
+<section style = "background-color:#C4CACC;">
+  <pre class='brush: java'>
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.border.LineBorder;
+
+/**
+ * This frame contains a text field and a control panel to change the font of
+ * the text.
+ */
+public class Computadora extends JFrame {
+	/**
+	 * Constructs the frame.
+	 */
+	public Computadora() {
+		// Construct text sample
+		super("El titutlo");
+		sampleField = new JTextField("Hello World");
+		add(sampleField, BorderLayout.CENTER);
+
+		// This listener is shared among all components
+		class ChoiceListener implements ActionListener {
+			public void actionPerformed(ActionEvent event) {
+				setFonts();
+			}
+		}
+
+		listener = new ChoiceListener();
+
+		createControlPanel();
+		setFonts();
+	}
+
+	/**
+	 * Creates the control panel to change the font.
+	 */
+	public void createControlPanel() {
+		JPanel facenamePanel = createComboBox();
+		JPanel sizeGroupPanel = createCheckBoxes();
+		JPanel styleGroupPanel = createRadioButtons();
+		JPanel colorGroupPanel = BackgroudColor();
+
+		// Line up component panels
+
+		JPanel controlPanel = new JPanel();
+		controlPanel.setLayout(new GridLayout(3, 1));
+		controlPanel.add(facenamePanel);
+		controlPanel.add(sizeGroupPanel);
+		controlPanel.add(styleGroupPanel);
+		controlPanel.add(colorGroupPanel);
+
+		// Add panels to content pane
+
+		add(controlPanel, BorderLayout.SOUTH);
+	}
+
+	/**
+	 * Creates the combo box with the font style choices.
+	 * 
+	 * @return the panel containing the combo box
+	 */
+	public JPanel createComboBox() {
+		facenameCombo = new JComboBox();
+		facenameCombo.addItem("Serif");
+		facenameCombo.addItem("SansSerif");
+		facenameCombo.addItem("Monospaced");
+		facenameCombo.setEditable(true);
+		facenameCombo.addActionListener(listener);
+
+		JPanel panel = new JPanel();
+		panel.add(facenameCombo);
+		return panel;
+	}
+
+	/**
+	 * Creates the check boxes for selecting bold and italic styles.
+	 * 
+	 * @return the panel containing the check boxes
+	 */
+	public JPanel createCheckBoxes() {
+
+		plainCheckBox = new JCheckBox("Plain");
+		plainCheckBox.addActionListener(listener);
+		plainCheckBox.setSelected(true);
+
+		italicCheckBox = new JCheckBox("Italic");
+		italicCheckBox.addActionListener(listener);
+
+		boldCheckBox = new JCheckBox("Bold");
+		boldCheckBox.addActionListener(listener);
+
+		JPanel panel = new JPanel();
+		panel.add(plainCheckBox);
+		panel.add(italicCheckBox);
+		panel.add(boldCheckBox);
+		panel.setBorder(new LineBorder(Color.GRAY));
+
+		return panel;
+	}
+
+	public JPanel BackgroudColor() {
+
+		colorBlanco = new JRadioButton("Plain");
+		colorBlanco.addActionListener(listener);
+
+		colorRojo = new JRadioButton("Red");
+		colorRojo.addActionListener(listener);
+
+		colorAzul = new JRadioButton("Blue");
+		colorAzul.addActionListener(listener);
+		plainCheckBox.setSelected(true);
+
+		colorAmarillo = new JRadioButton("Yellow");
+		colorAmarillo.addActionListener(listener);
+
+		ButtonGroup group = new ButtonGroup();
+		group.add(colorBlanco);
+		group.add(colorRojo);
+		group.add(colorAzul);
+		group.add(colorAmarillo);
+
+		JPanel panel = new JPanel();
+		panel.add(colorBlanco);
+		panel.add(colorRojo);
+		panel.add(colorAzul);
+		panel.add(colorAmarillo);
+
+		panel.setBorder(new LineBorder(Color.GRAY));
+
+		return panel;
+	}
+
+	/**
+	 * Creates the radio buttons to select the font size
+	 * 
+	 * @return the panel containing the radio buttons
+	 */
+	public JPanel createRadioButtons() {
+		smallButton = new JRadioButton("Small");
+		smallButton.addActionListener(listener);
+		smallButton.setSelected(true);
+
+		mediumButton = new JRadioButton("Medium");
+		mediumButton.addActionListener(listener);
+
+		largeButton = new JRadioButton("Large");
+		largeButton.addActionListener(listener);
+
+		// Add radio buttons to button group
+
+		ButtonGroup group = new ButtonGroup();
+		group.add(smallButton);
+		group.add(mediumButton);
+		group.add(largeButton);
+
+		JPanel panel = new JPanel();
+		panel.add(smallButton);
+		panel.add(mediumButton);
+		panel.add(largeButton);
+
+		return panel;
+	}
+
+	/**
+	 * Gets user choice for font name, style, and size and sets the font of the
+	 * text sample.
+	 */
+	public void setFonts() {
+		// Get font name
+		String facename = (String) facenameCombo.getSelectedItem();
+
+		// Get font style
+
+		int stilo = 0;
+		if (plainCheckBox.isSelected())
+			stilo = stilo + Font.PLAIN;
+		if (italicCheckBox.isSelected())
+			stilo = stilo + Font.ITALIC;
+
+		if (boldCheckBox.isSelected())
+			stilo = stilo + Font.BOLD;
+		// Get color
+
+		Color color;
+		if (colorBlanco.isSelected())
+			sampleField.setBackground(Color.WHITE);
+
+		if (colorRojo.isSelected())
+			sampleField.setBackground(Color.RED);
+
+		if (colorAmarillo.isSelected())
+			sampleField.setBackground(Color.YELLOW);
+
+		if (colorAzul.isSelected())
+			sampleField.setBackground(Color.BLUE);
+
+		// Get font size
+
+		int size = 0;
+
+		final int SMALL_SIZE = 30;
+		final int MEDIUM_SIZE = 42;
+		final int LARGE_SIZE = 54;
+
+		if (smallButton.isSelected())
+			size = SMALL_SIZE;
+		else if (mediumButton.isSelected())
+			size = MEDIUM_SIZE;
+		else if (largeButton.isSelected())
+			size = LARGE_SIZE;
+
+		// Set font of text field
+
+		sampleField.setFont(new Font(facename, stilo, size));
+	}
+
+	private JTextField sampleField;
+	private JCheckBox italicCheckBox;
+	private JCheckBox boldCheckBox;
+	private JCheckBox plainCheckBox;
+	private JRadioButton colorBlanco;
+	private JRadioButton colorRojo;
+	private JRadioButton colorAzul;
+	private JRadioButton colorAmarillo;
+	private JRadioButton smallButton;
+	private JRadioButton mediumButton;
+	private JRadioButton largeButton;
+	private JComboBox facenameCombo;
+	private ActionListener listener;
+
+	public static void main(String[] args) {
+
+		SwingUtilities.invokeLater(new Runnable() {
+
+			@Override
+			public void run() {
+				JFrame frame = new Computadora();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.setVisible(true);
+				frame.setBounds(100, 100, 600, 400);
+
+			}
+		});
+
+	}
+}
+
+      </pre>
+  </section>
+  
+  <footer style = "background: #26292B;">
+    <ul>
+	<br/>
+      <center><li><a target = "_blank" href = "https://www.linkedin.com/pub/henry-granados/a5/768/666"><i class="fa fa-linkedin fa-3x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a target = "_blank" href = "https://github.com/henrygranados"><i class="fa fa-github fa-3x" ></i></li></a></center>
+    </ul>
+    <br/>
+    <center><p id="copy" style = "color:white;">Copyright © 2015 - All Rights Reserved</p></center>
+  </footer>
+
+<!--******************************STARTS of Little pop up windows************************************-->
+<!--************************************************************************************************-->
+
+<div style='display:none'>
+	<div id='inline_content1' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/java1.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">JAVA</div>
+             This is a simple program for changing the font of a text using JFRAME.
+          
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+			<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content2' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/php1.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">PHP</div>
+          This program shows how to validate data on a Contact Form using PHP. 
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content3' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/angularjs2.png" alt="" />  
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">Validation Form Using AngularJs </div>
+           
+		 This program is a simple demo on validating a contact form using AngularJs
+			<br><br>
+             <div class="popUpBtn">Live Demo</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">Live Demo</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content4' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/javascript.png" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">Javascript</div>
+            Javascript program
+			<br><br>
+    		<div class="popUpBtn">View Source</div>
+			<!--<a href="" target="_blank"><div class="popUpBtn">View Source</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content5' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/jdbc.png" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">JAVA & JDBC</div>
+			 This program shows a good understanding of how data could be retrieve using JAVA & JDBC driver.
+			<br><br>
+    		<div class="popUpBtn">View Source</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content6' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/phpmysql.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">PHP and MYSQL</div>
+            This program allows users to register on a registration page and have their information go straight to DataBase.
+			<br><br>
+    		<div class="popUpBtn">View Source Code</div>
+			 <!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content7' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    		<img src="images/ajaxjquery.jpg" alt="" />
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">AngularJs Pop up windowAJAX and JQUERY</div>
+			This program creates a pop up window using AngularJs
+			<br><br>
+    		<div class="popUpBtn">Live Demo</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">LAUNCH WEBSITE</div></a>-->
+
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+<div style='display:none'>
+	<div id='inline_content8' style='padding:20px; background:#fff;'>
+    	<div class="popUpLeft">
+    	<img src="images/angularjs2.png" alt="" />	
+    	</div>
+    	<div class="popUpRight">
+    		<div class="popUpTitle">AngularJs Pop up window</div>
+			This program allows to retrieve data from DataBase using AJAX and JQUERY
+			<br><br>
+    	<div class="popUpBtn">View Source Code</div>
+		<!--<a href="" target="_blank"><div class="popUpBtn">View Source Code</div></a>-->
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+<!--******************************END OF POP UP WINDOWS*****************************************-->
+<!--********************************************************************************************-->
+
+<div style='display:none'>
+	<div id='inline_content9' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/stacked_zoom.png" alt="Stacked Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content11' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/endtoend_zoom.png" alt="End To End Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content12' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/peabo_zoom.png" alt="Peabo Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content13' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/the_right_stuff_zoom.png" alt="The Right Stuff Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content14' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/torple_zoom.png" alt="Torple Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content15' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/skewed_zoom.png" alt="Skewed Icons" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content16' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/fizzlebottom_zoom.png" alt="Fizzlebottom Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content17' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/gab_zoom.png" alt="Gab Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content18' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/dubbub_zoom.png" alt="DubBub Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content19' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/pleasantlyplump_zoom.png" alt="Pleasantly Plump Icons" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content20' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/quick_zoom.png" alt="Quick and Dirty Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content21' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/forfty_zoom.png" alt="Forfty Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content22' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/scribble_zoom.png" alt="Forfty Scribble Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+
+<div style='display:none'>
+	<div id='inline_content23' class="popUpStore">
+    	<div class="popUpFull">
+    		<img src="images/store/twoandtwo_zoom.png" alt="Two and Two Mini Font" />
+    	</div>
+        <div class="space"></div>
+	</div>
+</div>
+
+  
+<script>
+// Cache selectors
+var lastId,
+    topMenu = $("#top-menu"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 900);
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href=#"+id+"]").parent().addClass("active");
+   }                   
+});
+</script>
+<script type="text/javascript">
+     SyntaxHighlighter.all()
+</script>
+</body>
+</html>
