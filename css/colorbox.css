@@ -20,7 +20,7 @@
     Change the following styles to modify the appearance of Colorbox.  They are
     ordered & tabbed in a way that represents the nesting of the generated HTML.
 */
-#cboxOverlay{background:#fff; opacity: 0.75; filter: alpha(opacity=75);}
+#cboxOverlay{background:#000; opacity: 0.75; filter: alpha(opacity=75);}
 #colorbox{outline:0; -moz-box-shadow: 0 0 5px #999; -webkit-box-shadow: 0 0 5px #999; box-shadow: 0px 0px 5px #999; -moz-border-radius: 5px; border-radius: 5px; font-size:14px; line-height:18px;}
     #cboxContent{background:#fff; overflow:hidden;}
         .cboxIframe{background:#fff;}
