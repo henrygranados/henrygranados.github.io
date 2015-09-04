@@ -55,6 +55,7 @@ display: none;
     </div>
   </form>
   
+  
   <table class="table table-bordered table-striped">
     
     <thead>
@@ -106,9 +107,20 @@ display: none;
         <td>
              <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.id)"></button> Remove
         </td>
+        <td>
+<div ng-hide="editorEnabled">
+      <a href="#" ng-click="editorEnabled=!editorEnabled" class="btn btn-primary " ><i class="fa fa-pencil-square-o"></i>Edit</a>
+    </div>
+    <div ng-show="editorEnabled">
+      <input ng-model="people.name">
+      <input ng-model="people.Lastname">
+      <input ng-model="people.age">
+      <a class="btn btn-success" href="#" ng-click="editorEnabled=!editorEnabled">Save</a>
+    </div>
+
+        </td>
       </tr>
-    </tbody>
-    
+    </tbody>  
   </table>
     <div  header-info innerHtm="inner_text"></div>
     <a class="btn btn-primary fa fa-plus ng-scope" data-toggle="modal" ng-click="openPopupScreen()">Add Customer</a>
