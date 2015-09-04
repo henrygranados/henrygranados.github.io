@@ -40,7 +40,7 @@ display: none;
 </style>
 </head>
 <body>
-<div class="container" style = "border: 1px solid #428bca;"ng-app="sortApp" ng-controller="mainController">
+<div class="container" style = "border: 1px solid #428bca;"ng-app="App" ng-controller="mainController">
   <br/>
   <p style = "font-size:20px;font-family: arial;color:#757B7D;text-shadow: -2px -3px 30px rgba(152, 150, 150, 1);">Author: Henry Granados</p>
   <p style = "font-size:20px;font-family: arial;color:#757B7D;text-shadow: -2px -3px 30px rgba(152, 150, 150, 1);">Website: http://henrygranados.github.io/</p>
@@ -104,7 +104,7 @@ display: none;
         <td>{{ people.Lastname }}</td>
         <td>{{ people.age }}</td>
         <td>
-             <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson($index)"></button> Remove
+             <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.id)"></button> Remove
         </td>
       </tr>
     </tbody>
@@ -115,7 +115,8 @@ display: none;
   
 </div>
 <script type="text/javascript">
-var App = angular.module('sortApp', ['ui.bootstrap'])
+
+var App = angular.module('App', ['ui.bootstrap'])
 
 App.controller('mainController', function($scope, $modal, $log, $filter) {
 
@@ -149,11 +150,14 @@ App.controller('mainController', function($scope, $modal, $log, $filter) {
   This function removes a customer
    */
    $scope.removePerson = function(index){
-
-if(confirm("Are you sure to remove Customer")){
-            $scope.People.splice(index, 1);
-        }
-   };  
+    if(confirm("Are you sure to remove Customer")){
+        angular.forEach($scope.People, function(value, key) {
+            if (value.id === index){
+                $scope.People.splice(key, 1);
+            }
+        });
+    }
+};  
   $scope.openPopupScreen = function() {
 
     var modalInstance = $modal.open({
@@ -221,6 +225,12 @@ var ModalInstanceCtrl = function($scope, $modalInstance) {
 };
    
 });
+
+
+
+
+
+
 
 </script>
 </body>
