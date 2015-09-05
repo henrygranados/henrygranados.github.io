@@ -536,7 +536,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 	margin-bottom:10px;
 }
 .popUpBtn {
-	background-color:#bdcbb6;
+	background-color:#778472;
 	color:#ffffff;
 	text-align:center;
 	font-size:12px;
@@ -549,7 +549,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 	border-radius: 5px;
 }
 .popUpBtn:hover {
-	background-color:#778472;
+	background-color:#576153;
 	cursor:pointer;
 }
 .popUpRight a:link, .popUpFull a:link {color: #ffffff; text-decoration:none;}
