@@ -39,7 +39,10 @@
         #cboxSlideshow{position:absolute; bottom:0px; right:42px; color:#444;}
         #cboxPrevious{position:absolute; bottom:0px; left:0; color:#444;}
         #cboxNext{position:absolute; bottom:0px; left:63px; color:#444;}
-        #cboxClose{position:absolute; bottom:0; right:0; display:block; background-color:#d76713; padding:8px 11px 8px 11px; color:#ffffff; -moz-border-top-left-radius: 5px; border-top-left-radius: 5px;}
+        #cboxClose{position:absolute; bottom:0; right:0; display:block;font-size: 20px;background-color:#337ab7; padding:8px 11px 8px 11px; color:#ffffff; -moz-border-top-left-radius: 5px; border-top-left-radius: 5px;}
+#cboxClose:hover{
+background-color:#265a88;
+}
 
 /*
   The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
