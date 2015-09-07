@@ -32,7 +32,7 @@ section{
 	padding:30px 20px 20px;
 }
 input[type = "search"]{
-	width: 500px;
+	width: 330px;
 	height:50px;
 	color:#000000;
 }
@@ -71,6 +71,8 @@ input[type = "search"]{
 
 #search-btn{
 	position:absolute;
+	background-color:gray;
+	color:#ffffff;
 	float: right;
 	top:5px;
 	font-size: 18px;
