@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search From Youtube API</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/jquery.fancybox.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/youtube.js"></script>
+		<script src="js/jquery.fancybox.pack.js"></script>
+		<script>
+			$(document).ready(function(){
+				$(".fancybox").fancybox();
+			});
+		</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>Youtube<span> Search-Videos</span></h1>
+				<br/>
+				<img src = "images/youtube.jpeg"/>
+			</header>
+			<section>
+				<form id="search-form" name="search-form" onsubmit="return searchVideo()">
+					<div class="fieldcontainer">
+						<input type="search" id="query" class="search-field" placeholder="Search a video...">
+						<input type="submit"  name="search-btn" id="search-btn" value="Search">
+					</div>
+				</form>
+				<ul id="results"></ul>
+				<div id="buttons"></div>
+			</section>
+		</div>
+	</body>
+</html>
