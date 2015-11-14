@@ -84,7 +84,7 @@ function initCanvas(){
             //ctx.fillStyle = "green";
             ctx.drawImage(enemyList[i].image, enemyList[i].x, enemyList[i].y += .5, enemyList[i].w, enemyList[i].h);
             // So the reason why your ships can't tell if there was a crash is because you never called the function that can do this.
-            launcher.hitDetectLowerLevel(enemyList[i], 3);
+            launcher.hitDetectLowerLevel(enemyList[i]);
             //ctx.fillRect(enemies[i].x, enemies[i].y+=.5, enemies[i].w, enemies[i].h);
         }
     }
@@ -146,17 +146,8 @@ function initCanvas(){
                 }
             }
         }
-        ////////
-        // this.numberOfLives = function(){
-        //      var numberLives = 3;
-        //      if(numberLives == 0){
-        //         alert("The game is over");
-        //      }
-
-        // }
-        /////////////
         // Ask player ship if an enemy has passed or has hit the player ship
-        this.hitDetectLowerLevel = function(enemy, numberLives){
+        this.hitDetectLowerLevel = function(enemy){
             var e = enemy;
             var hitBox = enemy.hitBox
             var gameStatus = { // If you wanted to use different fonts or messages for the player losing you can change it accordingly.
@@ -168,46 +159,13 @@ function initCanvas(){
             if(e.y > 550){
                 gameStatus.over = true;
                 gameStatus.message = 'Ships have passed!'
-                // numberLives--;
-                // if(numberLives == 0){
-                //   alert("The game is over");
-                // }
-                location.reload();
-                numberLives--;
-                window.content.localStorage[key] = numberLives;
-                if(numberLives == 0){
-                   alert("The game is over");
-                }
-
             }
             // THIS DETECTS SHIPS CRASHING!
             if ((enemy.y < this.y + hitBox.y && enemy.y > this.y - hitBox.y) &&
                 (enemy.x < this.x + hitBox.x && enemy.x > this.x - hitBox.x)) {
                     gameStatus.over = true;
                     gameStatus.message = 'You Died!'
-                   // if(numberLives == 0){
-                   // alert("The game is over");
-                   //  }
-                   numberLives--;
-                   var a = localStorage.setItem("numberLives", numberLives);
-                   var b = localStorage.getItem("numberLives");
-                   
-                   if(b >=2){
-                   location.reload();
-                   }
-                   //numberLives--;
-                   else if (b == 1){
-                    alert("stop");
-                   }
-                   // numberLives--;
-
-                   // var a = localStorage.getItem(numberLives);
-                   
-                   // if(a == 0){
-                   //  alert("The game is over");
-                   // }
-                
-            }
+                }
 
             if(gameStatus.over == true){  
                 clearInterval(animateInterval); // Stop the game animation loop
@@ -223,7 +181,7 @@ function initCanvas(){
         launcher.render();
         renderEnemies(enemies);
     }
-    var animateInterval = setInterval(animate, 5);
+    var animateInterval = setInterval(animate, 4);
     var left_btn = document.getElementById('left_btn');
     var right_btn = document.getElementById('right_btn');
     var fire_btn = document.getElementById('fire_btn'); 
@@ -339,7 +297,6 @@ function initCanvas(){
 window.addEventListener('load', function(event) {
     initCanvas();
 });
-
 
 </script>
 </head>
