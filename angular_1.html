@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src = "app.js"></script>
 <style type="text/css">
 #Error_Message_name{
   display: none;
@@ -37,6 +38,7 @@ display: none;
   font-size: 20px;
   color: #ffffff;
 }
+
 </style>
 </head>
 <body>
@@ -55,17 +57,14 @@ display: none;
     </div>
   </form>
 
-<table
-  <tr ng-repeat="item in items">
-
+<table>
+      <tr ng-repeat="item in items">
       <td>
       <p><i ng-hide="item.lateLoader"  class="icon icon-refresh icon-spin"><i style = "color:black; "class="fa fa-4x fa-spinner fa-spin"></i>Loading Customer's Data</i></p>
       </td>
-
       </tr>
   </table>
-  <table class="table table-bordered table-striped">
-    <thead>
+  <table  ng-show="(People | filter:criteria).length" class=" table table-striped table-bordered">
       <tr>
         <td>
           <a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse">
@@ -103,32 +102,21 @@ display: none;
           </a>
         </td>
       </tr>
-    </thead>
-    
-    <tbody>
-      <tr  ng-repeat="people in People | orderBy:sortType:sortReverse | filter:searchPerson">
-        <td>{{ $index + 1}}</td>
-        <td>{{ people.name }}</td>
-        <td>{{ people.Lastname }}</td>
-        <td>{{ people.age }}</td>
-        <td>
-             <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.name)"></button> Remove
-        </td>
-        
-        <td>
-<div ng-hide="editorEnabled">
-      <a href="#" ng-click="editorEnabled=!editorEnabled" class="btn btn-primary " ><i class="fa fa-pencil-square-o"></i>Edit</a>
-    </div>
-    <div ng-show="editorEnabled">
-      <input ng-model="people.name">
-      <input ng-model="people.Lastname">
-      <input ng-model="people.age">
-      <a class="btn btn-success" href="#" ng-click="editorEnabled=!editorEnabled">Save</a>
-    </div>
 
-        </td>
-      </tr>
-    </tbody>  
+     <tr  ng-repeat="people in People track by $index| filter:searchPerson">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ people.name }}</td>
+                <td>{{ people.Lastname }}</td>
+                <td>{{ people.age }}</td>
+                <td>
+                 <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.name)"></button> Remove
+               </td>
+               <td>
+                <div ng-hide="editorEnabled">
+                 <a  ng-click="openPopupScreen(people);" ng-click="editorEnabled=!editorEnabled; " class="btn btn-primary " ><i class="fa fa-pencil-square-o"></i>Edit</a>
+               </div>
+      </td>
+     </tr>
   </table>
     <div  header-info innerHtm="inner_text"></div>
     <a class="btn btn-primary fa fa-plus ng-scope" data-toggle="modal" ng-click="openPopupScreen()">Add Customer</a>  
@@ -149,14 +137,14 @@ App.controller('mainController', function($scope, $modal, $log, $filter) {
   setTimeout(function(){
     $scope.$apply(function(){
     $scope.People = [
-    {  name: 'Mike', Lastname: 'White', age: 26 },
-    {  name: 'Carl', Lastname: 'Barns', age: 41 },
-    {  name: 'Deb', Lastname: 'McDonals',age: 78 },
-    {  name: 'Tommy', Lastname: 'Humbs', age: 32 },
-    {  name: 'Mary', Lastname: 'Browns', age: 18 },
-    {  name: 'Alex', Lastname: 'Sams', age: 50 },
-    {  name: 'Beto', Lastname: 'Burns', age: 27 },
-    {  name: 'Kathy', Lastname: 'Sams', age: 43 }
+    { name: 'Mike', Lastname: 'White', age: 26 },
+    { name: 'Carl', Lastname: 'Barns', age: 41 },
+    { name: 'Deb', Lastname: 'McDonals',age: 78 },
+    { name: 'Tommy', Lastname: 'Humbs', age: 32 },
+    { name: 'Mary', Lastname: 'Browns', age: 18 },
+    { name: 'Alex', Lastname: 'Sams', age: 50 },
+    { name: 'Beto', Lastname: 'Burns', age: 27 },
+    { name: 'Kathy', Lastname: 'Sams', age: 43 }
   ];  
 });
 },1000);
@@ -192,42 +180,39 @@ App.controller('mainController', function($scope, $modal, $log, $filter) {
             }
         });
     }
-};  
-  $scope.openPopupScreen = function() {
-
-    var modalInstance = $modal.open({
-      template: '<div class="modal-header">   <a class="close" data-dismiss="modal" ng-click="cancel()"><i class="fa fa-times-circle-o" style="margin:10px;color:black;font-size:35px;"></i></a><h1>Add Customer</h1></div><div class="modal-body">    <form >' +
-        ' <label class="col-sm-3 control-label no-padding-right ng-binding">NAME:</label><input style = "width:300px;"type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.name"></br>' +
-        ' <label class="col-sm-3 control-label no-padding-right ng-binding">LASTNAME:</label><input style = "width:300px;" type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.Lastname"></br>' +
-        ' <label class="col-sm-3 control-label no-padding-right ng-binding">AGE:</label><input style = "width:300px;" type="number"class="form-control ng-scope ng-pristine ng-valid" ng-model="person.age"></br>' +
-        ' <button id = "myid" type="button" class="btn btn-success" ng-click="add()"><i class="ace-icon fa fa-check"></i>Add New Customer</button>' +
+}; 
+var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="modal" ng-click="cancel()"><i class="fa fa-times-circle-o" style="margin:10px;color:black;font-size:35px;"></i></a><h1>.</h1></div><div class="modal-body"><form >' +
+        ' <label class="col-sm-3 control-label no-padding-right ng-binding">NAME:</label><input style = "width:200px;"type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.name"></br>' +
+        ' <label class="col-sm-3 control-label no-padding-right ng-binding">LASTNAME:</label><input style = "width:200px;" type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.Lastname"></br>' +
+        ' <label class="col-sm-3 control-label no-padding-right ng-binding">AGE:</label><input style = "width:200px;" type="number"class="form-control ng-scope ng-pristine ng-valid" ng-model="person.age"></br>' +
+        ' <button id = "myid" type="button" class="btn btn-success" ng-click="add()"><i class="ace-icon fa fa-check"></i>Save</button>' +
         '  <button type="reset" class="btn ">Clear</button>' +
-        '<div ng-hide = "error_name_message" id="Error_Message_name">'+
-        '<p>Please enter a name</p>'+
-      '</div>'+
-      '<div ng-hide = "error_lastname_message" id="Error_Message_Lastname">'+
-        '<p>Please enter a lastname</p>'+
-      '</div>'+
-      '<div ng-hide = "error_age_message" id="Error_Message_Age">'+
-        '<p>Please enter age</p>'+
-      '</div>'+
         ' </form>' +
         '</div>' +
         '<div class="modal-footer">' +
         '  <a data-dismiss="modal" aria-hidden="true" class="btn btn-primary" ng-click="cancel()">close</a>' +
-        '</div>',
-      controller: ModalInstanceCtrl
+        '</div>';
+  $scope.People = [];  
+
+  $scope.openPopupScreen = function(people) {
+
+    var modalInstance = $modal.open({
+      template: modalTemplate ,
+      controller: ModalInstanceCtrl,
+      resolve: {
+        person: function(){
+          return people;
+        }
+      }
     });
     modalInstance.result.then(function (newPerson) {
       $scope.People.push(newPerson);
     });
   };
 
-var ModalInstanceCtrl = function($scope, $modalInstance) {
-  $scope.person = {name: '', Lastname: '', age: ''};
-  $scope.error_name_message = true;
-  $scope.error_lastname_message = true;
-  $scope.error_age_message = true;
+var ModalInstanceCtrl = function($scope, $modalInstance, person) {
+  console.log(person);
+  $scope.person = person || {name: '', Lastname: '', age: ''};
 
   
   $scope.ok = function() {
@@ -239,28 +224,11 @@ var ModalInstanceCtrl = function($scope, $modalInstance) {
   };
 
   $scope.add = function() {
-    //Pass newPerson to caller from main controller
-    if($scope.person.name === ""){  
-
-   $scope.error_name_message= false;
-      $("#Error_Message_name").show().delay(1900).fadeOut(900); // don't leave error on screen for long
-    }
-    else if($scope.person.Lastname === ""){  
-      $scope.error_lastname_message = false;
-      $("#Error_Message_Lastname").show().delay(1900).fadeOut(900); // don't leave error on screen for long
-    }
-    else if($scope.person.age === "" || $scope.person.age < 1){  
-      $scope.error_age_message = false;
-      $("#Error_Message_Age").show().delay(1900).fadeOut(900); // don't leave error on screen for long
-    }
-    else{
     $modalInstance.close($scope.person);
-   }
   };
-};
+}; 
    
 });
-
 
 </script>
 </body>
