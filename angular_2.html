@@ -1,6 +1,7 @@
 <html ng-app="App">
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script>
 		var model = {
@@ -84,7 +85,7 @@
 </div>
 <div class="container">
 	<div class="input-group">
-		<input class="form-control" ng-model="newItem"/>
+		<input placeholder = "Enter item here..."class="form-control" ng-model="newItem"/>
 		<span class="input-group-btn">
 			<button class="btn btn-primary" ng-click="addNewItem(newItem)">Add</button>
 		</span>
