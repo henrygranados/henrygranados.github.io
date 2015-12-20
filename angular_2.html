@@ -72,6 +72,98 @@
 
 		});
 	</script>
+	<style type="text/css">
+    body{
+	font-family: 'Roboto Condensed',sans-serif;
+}
+
+#username{
+	text-shadow: 1px 1px 6px rgba(150, 150, 150, 1);
+}
+
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 570px) {
+  #container {
+    width: 90%;
+    padding: 0.5em;
+  }
+  #page-header {
+    width: 100%;
+    margin-bottom: 0.75em;
+  }
+  #headline {
+    font-size: 3.4em;
+    padding: 0.3em;
+  }
+  #menu-options {
+    width: 100%;
+    margin-bottom: 0.75em;
+  }
+  #sub-container {
+    width: 100%;
+  }
+  #sub-container h2 {
+    text-align: center;
+    margin-left: 0;
+    font-size: 2em;
+  }
+  input[type="text"] {
+    display: block;
+    width: 90%;
+    margin: 0 auto 0.25em auto;
+  }
+  input {
+    margin-right: 0.7em;
+  }
+  input[type="checkbox"] {
+    margin-right: 1.1em;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 571px) and (max-width: 797px) {
+  #container {
+    width: 90%;
+    padding: 0.5em;
+  }
+  #page-header {
+    width: 100%;
+  }
+  #headline {
+    font-size: 4.2em;
+  }
+  #menu-options {
+    width: 100%;
+  }
+  input[type="button"] {
+    padding: 0.2em;
+  }
+}
+
+@media (min-width: 798px) and (max-width: 1199px) {
+  #container {
+    width: 80%;
+    padding: 0.5em;
+  }
+  #page-header {
+    width: 90%;
+  }
+  #headline {
+    font-size: 4.8em;
+  }
+  input[type="button"] {
+    padding: 0.2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #container {
+    width: 60%;
+  }
+}
+
+
+	</style>
 </head>
 <body ng-controller="MainController"> 
 	<div class="page-header" style="text-align:center">
