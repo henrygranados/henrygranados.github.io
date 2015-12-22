@@ -176,7 +176,7 @@ App.controller('mainController', function($scope, $modal) {
         });
     }
 }; 
-var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="modal" ng-click="cancel()"><i class="fa fa-times-circle-o" style="margin:10px;color:black;font-size:35px;"></i></a><h1>.</h1></div><div class="modal-body"><form >' +
+var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="modal" ng-click="cancel()"><i class="fa fa-times-circle-o" style="margin:10px;color:black;font-size:35px;"></i></a><h1>Customer</h1></div><div class="modal-body"><form >' +
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">NAME:</label><input style = "width:200px;"type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.name"></br>' +
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">LASTNAME:</label><input style = "width:200px;" type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.Lastname"></br>' +
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">AGE:</label><input style = "width:200px;" type="number"class="form-control ng-scope ng-pristine ng-valid" ng-model="person.age"></br>' +
@@ -186,8 +186,7 @@ var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="
         '</div>' +
         '<div class="modal-footer">' +
         '  <a data-dismiss="modal" aria-hidden="true" class="btn btn-primary" ng-click="cancel()">close</a>' +
-        '</div>';
-  //$scope.People = [];  
+        '</div>'; 
 
   $scope.openPopupScreen = function(people) {
 
@@ -201,6 +200,11 @@ var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="
       }
     });
     modalInstance.result.then(function (newPerson) {
+    	angular.forEach($scope.People, function(value, key) {
+        if (value.name == newPerson.name){
+          $scope.People.splice(key, 1);
+        }
+      });
       $scope.People.push(newPerson);
     });
   };
@@ -221,9 +225,9 @@ var ModalInstanceCtrl = function($scope, $modalInstance, person) {
   $scope.add = function(newItem) {
   	if(newItem == null || newItem == ''){
 
-        angular.forEach($scope.People.customers, function(value, key) {
+        angular.forEach($scope.People, function(value, key) {
           if (value.name == newItem){
-            $scope.People.customers.splice(key, 1);
+            $scope.People.splice(key, 1);
           }
         }); 
       }
