@@ -96,7 +96,14 @@ display: none;
         </td>
         <td>
           <a href="#" ng-click="sortType = 'age'; sortReverse = !sortReverse">
-          Action
+          Remove
+            <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'edit'; sortReverse = !sortReverse">
+          Edit
             <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
           </a>
@@ -109,7 +116,7 @@ display: none;
                 <td>{{ people.Lastname }}</td>
                 <td>{{ people.age }}</td>
                 <td>
-                 <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.name)"></button> Remove
+                 <button type="button" class="btn btn-danger fa fa-trash-o" ng-click="removePerson(people.name , searchPerson)"></button> Remove
                </td>
                <td>
                 <div ng-hide="editorEnabled">
@@ -124,7 +131,7 @@ display: none;
 <script>
 var App = angular.module('App', ['ui.bootstrap'])
 
-App.controller('mainController', function($scope, $modal, $log, $filter) {
+App.controller('mainController', function($scope, $modal) {
 
   $scope.sortType     = 'id'; // set the default sort type
   $scope.sortReverse  = false;  // set the default sort order
@@ -155,26 +162,16 @@ App.controller('mainController', function($scope, $modal, $log, $filter) {
      $scope.items[0].lateLoader = ' ';  
     });
   }, 1000);
-  /*
-  This function adds a new customer
-  */
-   $scope.addPerson = function(){
-    var customer = {
-        name: $scope.name,
-        Lastname: $scope.Lastname,
-        age: $scope.age,
-    };
-    
-    $scope.People.push(customer);
-  };
+  
    /*
   This function removes a customer
    */
-   $scope.removePerson = function(index){
+   $scope.removePerson = function(index, searchPerson){
     if(confirm("Are you sure to remove Customer")){
         angular.forEach($scope.People, function(value, key) {
             if (value.name === index){
                 $scope.People.splice(key, 1);
+                $scope.searchPerson = null;
             }
         });
     }
@@ -183,7 +180,7 @@ var modalTemplate= '<div class="modal-header">   <a class="close" data-dismiss="
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">NAME:</label><input style = "width:200px;"type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.name"></br>' +
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">LASTNAME:</label><input style = "width:200px;" type="text" class="form-control ng-scope ng-pristine ng-valid" ng-model="person.Lastname"></br>' +
         ' <label class="col-sm-3 control-label no-padding-right ng-binding">AGE:</label><input style = "width:200px;" type="number"class="form-control ng-scope ng-pristine ng-valid" ng-model="person.age"></br>' +
-        ' <button id = "myid" type="button" class="btn btn-success" ng-click="add()"><i class="ace-icon fa fa-check"></i>Save</button>' +
+        ' <button id = "myid" type="button" class="btn btn-success" ng-click="add(person.name)"><i class="ace-icon fa fa-check"></i>Save</button>' +
         '  <button type="reset" class="btn ">Clear</button>' +
         ' </form>' +
         '</div>' +
@@ -221,8 +218,18 @@ var ModalInstanceCtrl = function($scope, $modalInstance, person) {
     $modalInstance.dismiss('cancel');
   };
 
-  $scope.add = function() {
-    $modalInstance.close($scope.person);
+  $scope.add = function(newItem) {
+  	if(newItem == null || newItem == ''){
+
+        angular.forEach($scope.People.customers, function(value, key) {
+          if (value.name == newItem){
+            $scope.People.customers.splice(key, 1);
+          }
+        }); 
+      }
+      else{
+      	$modalInstance.close($scope.person);
+      }
   };
 }; 
    
