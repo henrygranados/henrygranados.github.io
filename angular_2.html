@@ -101,7 +101,7 @@
 		<tr ng-repeat="item in todo.items | checkedItems:showComplete | orderBy:'action'">
 			<td>{{item.action}}</td>
 			<td><input type="checkbox" ng-model="item.done" /></td>
-			<td><button type="button" class="btn btn-danger" ng-click="removeItem(item.action)">borrar</button></td>
+			<td><button type="button" class="btn btn-danger" ng-click="removeItem(item.action)">Delete</button></td>
 			<!-- <td>{{item.done}}</td> -->
 		</tr>
 	</tbody>
