@@ -4,73 +4,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script>
-		var model = {
-			user: "Henry",
-			items: [
-			{ action: "Buy groceries", done: false , remove : false},
-			{ action: "Buy school suplies", done: false , remove : false},
-			{ action: "Buy movie tickets", done: false , remove : false},
-			{ action: "Buy a razor", done: false , remove : false},
-			{ action: "Get new tires", done: false , remove : false}
-			]
-		};
-		var todoApp = angular.module("App", []);
 
-		todoApp.filter("checkedItems", function () {
-			return function (items, showComplete) {
-				var resultArr = [];
-				angular.forEach(items, function (item) {
-					if (item.done == false || showComplete == true) {
-						resultArr.push(item);
-					} });
-				return resultArr;
-			}
-		});
-
-		todoApp.controller("MainController", function ($scope) {
-			$scope.todo = model;
-
-			$scope.incompleteItems = function () {
-				var count = 0;
-				angular.forEach($scope.todo.items, function (item) {
-					if (!item.done) {
-						count = count + 1;
-					}
-				});
-				return count;
-			}
-			$scope.warningLevel = function () {
-				return $scope.incompleteItems() < 3 ? "label-success" : "label-warning";
-			}
-			$scope.addNewItem = function (newItem) {
-				
-				if(newItem == null || newItem == ''){
-					
-					angular.forEach($scope.todo.items, function(value, key) {
-						if (value.action == newItem){
-							$scope.todo.items.splice(key, 1);
-						}
-					});	
-
-				}
-				else{
-					$scope.todo.items.push({ action: newItem, done: false });
-					$scope.newItem = null;
-				}
-			}
-			
-
-			$scope.removeItem = function(index){
-
-				angular.forEach($scope.todo.items, function(value, key) {
-					if (value.action == index){
-						$scope.todo.items.splice(key, 1);
-					}
-				});
-
-			}; 
-
-		});
 	</script>
 </head>
 <body ng-controller="MainController"> 
@@ -85,7 +19,7 @@
 </div>
 <div class="container">
 	<div class="input-group">
-		<input placeholder = "Enter item here..."class="form-control" ng-model="newItem"/>
+		<input ng-keypress="pressed($event,newItem)" placeholder = "Enter item here..."class="form-control" ng-model="newItem"/>
 		<span class="input-group-btn">
 			<button class="btn btn-primary" ng-click="addNewItem(newItem)">Add</button>
 		</span>
@@ -110,5 +44,84 @@
 	<label><input type="checkbox" ng-model="showComplete"> Show Complete</label>
 </div>
 </div>
+<!-- <input id="keypresser" type="text" /> -->
+<script type="text/javascript">
+
+var model = {
+	user: "Henry",
+	items: [
+	{ action: "Buy groceries", done: false , remove : false},
+	{ action: "Buy school suplies", done: false , remove : false},
+	{ action: "Buy movie tickets", done: false , remove : false},
+	{ action: "Buy a razor", done: false , remove : false},
+	{ action: "Get new tires", done: false , remove : false}
+	]
+};
+var todoApp = angular.module("App", []);
+
+todoApp.filter("checkedItems", function () {
+	return function (items, showComplete) {
+		var resultArr = [];
+		angular.forEach(items, function (item) {
+			if (item.done == false || showComplete == true) {
+				resultArr.push(item);
+			} });
+		return resultArr;
+	}
+});
+
+todoApp.controller("MainController", function ($scope) {
+	$scope.todo = model;
+
+	$scope.incompleteItems = function () {
+		var count = 0;
+		angular.forEach($scope.todo.items, function (item) {
+			if (!item.done) {
+				count = count + 1;
+			}
+		});
+		return count;
+	}
+	$scope.warningLevel = function () {
+		return $scope.incompleteItems() < 3 ? "label-success" : "label-warning";
+	}
+	$scope.addNewItem = function (newItem) {
+
+		if(newItem == null || newItem == ''){
+
+			angular.forEach($scope.todo.items, function(value, key) {
+				if (value.action == newItem){
+					$scope.todo.items.splice(key, 1);
+				}
+			});	
+
+		}
+
+		else{
+			$scope.todo.items.push({ action: newItem, done: false });
+			$scope.newItem = null;
+		}
+	}
+
+	$scope.pressed = function($event,item) {
+		if ($event.which === 13)
+			{$scope.addNewItem(item);
+				console.log("hello");}
+			}
+
+	$scope.removeItem = function(index){
+
+				angular.forEach($scope.todo.items, function(value, key) {
+					if (value.action == index){
+						$scope.todo.items.splice(key, 1);
+					}
+				});
+
+			}; 
+
+		});
+
+
+</script>
 </body>
 </html>
