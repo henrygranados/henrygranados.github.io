@@ -21,7 +21,16 @@ body {
 	font-family: 'Raleway', sans-serif;
 	color:#373648;
 	//background-color:#EEEFE5;
-	background:transparent url(../images/paperbg.jpg) repeat bottom center;
+	background:transparent url(../images/blackwall.jpg) no-repeat center center fixed;
+
+
+	-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+}
+table{
+	color:#C8CBCC;
 }
 a:link {color: #d76713; text-decoration:none;}
 a:visited {color: #d76713; text-decoration:none;}
@@ -37,7 +46,7 @@ h1 {
 	font-family: 'MeetMeInBrooklyn-Regular';
 	font-size:55px;
 	line-height:60px;
-	color:#D56724;
+	color:#E67530;
 }
 h2 {
 	font-family: 'MeetMeInBrooklyn-Regular';
@@ -135,10 +144,11 @@ header {
 	font-weight:500;
 	letter-spacing:3px;
 	z-index:99999;
-	background: -webkit-linear-gradient(#89968B,#89968B); 
+	background-color: #566473;
+	/*background: -webkit-linear-gradient(#89968B,#89968B); 
   	background: -o-linear-gradient(#89968B,#89968B); 
   	background: -moz-linear-gradient(#89968B, #89968B);
-  	background: linear-gradient(#89968B, #89968B);
+  	background: linear-gradient(#89968B, #89968B);*/
 }
 .nav-up {
     top: -70px;
@@ -260,9 +270,9 @@ header {
 
 .bannerBkg {
 	background-position:top center;
-	background:#2f2e2e;
+	//background:#2f2e2e;
 	color: #ffffff;
-	height: 490px;
+	height: 550px;
 	margin: 0px 0px 0px 0px;
 	padding: 70px 0 0 0;
 	z-index:999999;
@@ -329,16 +339,19 @@ header {
 
 .tagline {
 	width:100%;
-	background-color:#DEDECD;
-	padding:77px 0px 107px 0px;
-	border-top:1px solid #F4F5EE;
+	background-color:#324254;
+	//background-image:url(../images/bluewall.jpg);
+	background-repeat:no-repeat;
+	//background-position:top left;
+	padding:0px 0px 60px 0px;
+	//border-top:1px solid #F4F5EE;
 }
 .taglineWrapper {
 	width:94%;
 	max-width:900px;
 	margin:0px auto;
 	font-size:28px;
-	color:#666666;
+	color:#C8CBCC;
 	text-align:center;
 	font-weight:300;
 	line-height:40px;
@@ -358,7 +371,7 @@ header {
 	margin-right:5.86%;
 	text-align:center;
 	font-size:17px;
-	color:#555555;
+	color:#C8CBCC;
 	margin-top:-45px;
 	line-height:25px;
 }
@@ -367,7 +380,7 @@ header {
 	float:left;
 	text-align:center;
 	font-size:17px;
-	color:#555555;
+	color:#C8CBCC;
 	margin-top:-45px;
 	line-height:25px;
 }
@@ -394,6 +407,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 	font-size:20px;
 	text-transform:uppercase;
 	letter-spacing:1px;
+	color:#E67530;
 }
 .servicesDivide1 {
 	margin:30px auto 30px auto;
@@ -415,7 +429,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 	width:50px;
 	border-bottom:1px solid #BCC2B6;
 }
-#designIcon {
+/*#designIcon {
 	visibility: hidden;
 }
 #developmentIcon {
@@ -426,7 +440,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 }
 #socialIcon {
 	visibility: hidden;
-}
+}*/
 
 
 /* About */
@@ -446,7 +460,7 @@ box-shadow: 7px 0px 5px 0px rgba(0,0,0,0.75);
 	font-size:16px;
 	line-height:23px;
 	text-align:left;
-	color:#666666;
+	color:#C8CBCC;
 }
 .aboutOctopus {
 	float:left;
@@ -722,7 +736,7 @@ background: #B2CBD4;
 }
 .andFont {
 	font-family: 'Goudy Bookletter 1911', serif;
-	color:#778472;
+	color:#949E90;
 }
 .storeFooter {
 	width:98%;
