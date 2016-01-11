@@ -65,7 +65,7 @@ section {
 }
 .space {
 	width:100%;
-	clear:both;
+	//clear:both;
 	padding-left:60px;
 }	
 .space3 {
@@ -625,6 +625,11 @@ background:#BCD1BE;
 	max-width:210px;
 	margin-bottom:10px;
 }
+.dkGreenBox:hover{
+-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
+    -moz-box-shadow:inset 0px 0px 0px 10px #000000;
+    box-shadow:inset 0px 0px 0px 10px #000000;
+}
 .yellowBox {
 	width:25%;
 	float:left;
@@ -640,6 +645,11 @@ background: #ffffff;
 	font-size:13px;
 	font-weight:700;
 	line-height:16px;
+}
+.yellowBox:hover{
+	 -webkit-box-shadow:inset 0px 0px 0px 10px #000000;
+    -moz-box-shadow:inset 0px 0px 0px 10px #000000;
+    box-shadow:inset 0px 0px 0px 10px #000000;
 }
 .yellowBox img {
 	width:60%;
@@ -666,6 +676,11 @@ background: #ffffff;
 	max-width:210px;
 	margin-bottom:10px;
 }
+.dkOrangeBox:hover{
+	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
+    -moz-box-shadow:inset 0px 0px 0px 10px #000000;
+    box-shadow:inset 0px 0px 0px 10px #000000;
+}
 .ltOrangeBox {
 	width:25%;
 	float:left;
@@ -686,6 +701,16 @@ background: #B2CBD4;
 	width:60%;
 	max-width:210px;
 	margin-bottom:10px;
+}
+.ltOrangeBox:hover{
+	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
+    -moz-box-shadow:inset 0px 0px 0px 10px #000000;
+    box-shadow:inset 0px 0px 0px 10px #000000;
+}
+.ltGreenBox:hover{
+	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
+    -moz-box-shadow:inset 0px 0px 0px 10px #000000;
+    box-shadow:inset 0px 0px 0px 10px #000000;
 }
 .grow {
   display: inline-block;
