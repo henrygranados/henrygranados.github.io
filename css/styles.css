@@ -629,6 +629,7 @@ background:#BCD1BE;
 -webkit-box-shadow:inset 0px 0px 0px 10px #000000;
     -moz-box-shadow:inset 0px 0px 0px 10px #000000;
     box-shadow:inset 0px 0px 0px 10px #000000;
+    background-color: #7E8385;
 }
 .yellowBox {
 	width:25%;
@@ -650,6 +651,7 @@ background: #ffffff;
 	 -webkit-box-shadow:inset 0px 0px 0px 10px #000000;
     -moz-box-shadow:inset 0px 0px 0px 10px #000000;
     box-shadow:inset 0px 0px 0px 10px #000000;
+    background-color: #7E8385;
 }
 .yellowBox img {
 	width:60%;
@@ -680,6 +682,7 @@ background: #ffffff;
 	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
     -moz-box-shadow:inset 0px 0px 0px 10px #000000;
     box-shadow:inset 0px 0px 0px 10px #000000;
+    background-color: #7E8385;
 }
 .ltOrangeBox {
 	width:25%;
@@ -706,11 +709,13 @@ background: #B2CBD4;
 	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
     -moz-box-shadow:inset 0px 0px 0px 10px #000000;
     box-shadow:inset 0px 0px 0px 10px #000000;
+    background-color: #7E8385;
 }
 .ltGreenBox:hover{
 	-webkit-box-shadow:inset 0px 0px 0px 10px #000000;
     -moz-box-shadow:inset 0px 0px 0px 10px #000000;
     box-shadow:inset 0px 0px 0px 10px #000000;
+    background-color: #7E8385;
 }
 .grow {
   display: inline-block;
