@@ -927,7 +927,13 @@ function hasScrolled() {
 <script>
 $(document).ready(function(){
   $.getJSON('https://api.stackexchange.com/2.2/users/4084160?order=desc&sort=reputation&site=stackoverflow', function (data) {
-      $("#show-reputation").html(data.items[0].reputation);
+      $.each(data, function(index, value){
+       for(var i in value){
+          if(value[i].hasOwnProperty("reputation")){
+            $("#show-reputation").html(value[i].reputation);
+          }
+       }  
+      });
     });
 });
 
