@@ -73,6 +73,12 @@
       width: 100%;
   }
 
+  img.profile-pic {
+      opacity: 0.6;
+      filter: alpha(opacity=60); /* For IE8 and earlier */
+  }
+
+
 </style>
 <script type="text/javascript">
   WebFontConfig = {
@@ -335,12 +341,19 @@ function hasScrolled() {
 
 <div class="bigSpace"></div>
 <a id="about"></a>
+
 <div class="aboutPc">
-	<div class="aboutOctopus"><a><img class="grayscale" style = "-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;" src="images/henry.jpg" class="grayscale" width="280" height="280" alt="octopus"/></a></div>
+
+	<div class="aboutOctopus">
+        <!--<a>-->
+         <img style = "-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;" src="images/henry2.jpg" class="profile-pic" width="280" height="280" alt="Henry"/>
+    </div>
+
   <div class="aboutText">
    <h1>About Me</h1>
    I’m very passionate about developing software. Capable of creating basic to advanced projects in most of the programming languages. Some of my skills include: Software Engineering, Web Development,
    Android applications and a growing understanding of the computer science enviroment.
+
  </div>
  <div class="space"></div>
 </div>
@@ -963,6 +976,10 @@ function hasScrolled() {
 
 <script>
 $(document).ready(function(){
+    $(".someTest").css({
+
+        "background":"rgba(0, 0, 0, 0.4)"
+    });
   $.getJSON('https://api.stackexchange.com/2.2/users/4084160?order=desc&sort=reputation&site=stackoverflow', function (data) {
       $.each(data, function(index, value){
        for(var i in value){
@@ -1023,6 +1040,7 @@ $(window).scroll(function(){
        .end().filter("[href=#"+id+"]").parent().addClass("active");
      }                   
    });
+
 </script>
 
 </body>

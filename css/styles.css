@@ -1683,7 +1683,9 @@ input {
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
+	background: red;
 }
+
 
 /* Retina Display Images */
 
@@ -1730,3 +1732,4 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
 .accordionContent{
 	display: none;
 }
+
