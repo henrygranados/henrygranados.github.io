@@ -137,9 +137,9 @@
          */
         $scope.removePerson = function(customerName, person, searchPerson){
             if(confirm("Are you sure to remove Customer")){
-                angular.forEach($scope.People.customers, function(value, key) {
+                angular.forEach($scope.People, function(value, key) {
                     if (value.name === customerName){
-                        $scope.People.customers.splice(key, 1);
+                        $scope.People.splice(key, 1);
                         $scope.searchPerson = null;
                     }
                 });
