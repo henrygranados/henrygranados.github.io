@@ -1,0 +1,162 @@
+input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*  Intro Page */
+
+#intro-page{
+	padding-left: 5px;
+	height: 400px;
+	width: 600px;
+	background: #8DF2A4;
+}
+
+.level-list{
+	display:inline-block;
+	background: #ffffff;
+	border-radius: 40px;
+	padding: 20px;
+	padding-left: 30px;
+	margin-left: 50px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.level-list-below{
+	display:inline-block;
+	background: #54D184;
+	margin-top:5px;
+	padding: 4px;
+	margin-left: 48px;
+}
+
+.start-rules-buttons{
+	display:inline-block;
+	padding-top: 30px;
+	margin-left: 48px;
+}
+
+.level-list-below-text{
+	font-weight: bold;
+	color: #000000;
+}
+
+.example{
+	color:#0F803A;
+}
+
+.level-text{
+	color: #CC5EA4;
+	font-weight: bold;
+}
+
+.title-intro{
+	color: yellow;
+	padding-left: 34%;
+	font-size: 30px;
+}
+
+.title{
+	color: yellow;
+	padding-left: 34%;
+	font-size: 30px;
+	background: #126E27;
+}
+.game-title{
+	font-weight: 700px;
+	color: red;
+	font-size: 30px;
+}
+
+#play-button{
+	background:#299CE3;
+	color: #ffffff;
+	font-size: 14px;
+	margin: 30px;
+	padding: 10px;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+#welcome-page {
+	display: none;
+	height: 400px;
+	width: 600px;
+	background: #8DF2A4;
+}
+
+#sum-interface, #substraction-interface, #division-interface, #report-interface, #rules-page{
+	display: none;
+	height: 400px;
+	width: 600px;
+	background: #8DF2A4;
+}
+
+.user-name-box{
+	background: #126E27;
+	height: 230px;
+	width: 300px;	
+	text-align: center;
+	margin: 30px 150px;
+	padding-top: 20px;
+	border-radius: 10px;
+	-webkit-box-shadow: 10px 3px 10px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 3px 10px -4px rgba(0,0,0,0.75);
+	box-shadow: 10px 3px 10px -4px rgba(0,0,0,0.75);
+}
+
+#show-timer, #show-timer2, #show-timer3{
+	float: right;
+}
+
+/* Fruit Images */
+
+div.banana-image{
+	background-image: url('../img/banana.png');
+    width: 100px !important;
+	height: 60px;
+	display: inline-block;
+	background-size: 35px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+div.apple-image{
+	background-image: url('../img/apple.png');
+    width: 120px;
+	height: 100px;
+	display: inline-block;
+	background-size: 33px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+div.watermelon-image{
+	background-image: url('../img/watermelon.png');
+    width: 120px;
+	height: 100px;
+	display: inline-block;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.score-table{
+	color: #126E27;
+	float: right;
+	padding-right: 50px;
+}
+
+.player-table{
+	color: #126E27;
+	padding-top: 20px;
+    padding-left: 20%;
+}

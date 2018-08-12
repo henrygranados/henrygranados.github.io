@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>App</title>
+</head>
+<body>
+
+<div id = "intro-page">
+	<div class="title-intro">fruit <span class = "game-title">Math Game</span></div>
+	<div>
+		<div class="level-list">LEVEL 1 
+			<div class="level-text">ADD</div>	
+		</div>
+		<div class="level-list">LEVEL 2 
+			<div class="level-text">SUBSTRACT</diV>
+		</div>
+		<div class="level-list">LEVEL 3 
+			<div class="level-text">DIVISION</div>
+		</div>
+	</div>
+	 <div>
+		<div class="level-list-below">
+			<div class = "example">example <span class="level-list-below-text">8 + 3 = 11</span></div>
+		</div>
+		<div class="level-list-below">
+			<div class = "example">example <span class="level-list-below-text">8 - 3 = 5</span></div>
+		</div>
+		<div class="level-list-below">
+			<div class = "example">example <span class="level-list-below-text">8 / 2 = 4</span></div>
+		</div>
+	</div>
+	<div>
+		<div class="start-rules-buttons">
+			<div id = "start-game" style = "cursor: pointer;font-size: 30px;margin: 10px;padding-left: 100px;color:crimson;font-weight: bold;">Start</div>
+		</div>
+		<div class="start-rules-buttons" style="float: right;padding-right: 120px;">
+			<div id = 'game-rules' style = "cursor: pointer;font-size: 30px;margin: 10px;" class="level-text">Rules</div>
+		</div>
+	</div>
+</div>
+
+<!--Rules Page-->
+<div id = "rules-page">
+		<div  style="font-weight: bold;padding-left: 20%;text-decoration: underline">Game Rules</div>	
+			<div class = "player-table">
+				<p style="font-weight: bold;">Rules for Level 1</p>
+					<p>This level is to test the player’s ability to add basic numbers within 90 seconds.</p>
+				<hr/>
+				<p style="font-weight: bold;">Rules for Level 2</p>
+					<p>This level is to test the player’s ability to substract basic numbers within 120 seconds.</p>
+				<hr/>
+				<p style="font-weight: bold;">Rules for Level 3</p>
+					<p>This level is to test the player’s ability to divide basic numbers within 150 seconds.</p>
+				<button id = "rules-play-button">START GAME</button>
+		</div>
+</div>
+<!-- Welcome Page-->
+<div id = "welcome-page">
+	<div class="title">fruit <span class = "game-title">Math Game</span></div>
+	<div class = "user-name-box">
+			<div style = "font-size: 20px;font-weight: bold;background: #194F9C;color: #ffffff;border-radius: 10px;width:90%;height: 30px;">Name</div>
+		<input type="text" id = "username" placeholder="Enter your name">
+		<div style = "font-size: 20px;font-weight: bold;background: #194F9C;color: #ffffff;border-radius: 10px;width:90%;height: 30px;">Select your age</div>
+		<select onchange="handleSelectChange(event)">
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select><br/>
+		<button id = "play-button">PLAY</button>
+	</div>
+</div>
+
+
+<!-- Addition Interface -->
+<div id = "sum-interface">
+<div style="font-weight: bold;padding-left:35%;padding-top:5px;margin-top:5px;">LEVEL 1 - ADDITION</div>
+	<div id = 'container'>
+		<div class="shuffleMe banana-image" onclick="getCorrectSumAnswer(this)"  id = "number1" ></div>
+		<div class="shuffleMe apple-image" onclick="getCorrectSumAnswer(this)"  id = "number2" style="display: inline;padding: 10px;"></div>
+		<div class="shuffleMe watermelon-image" onclick="getCorrectSumAnswer(this)"  id = "number3" style="padding: 10px;"></div>
+		<div class="shuffleMe banana-image" onclick="getCorrectSumAnswer(this)"  id = "number4" style="display: inline;padding: 10px;"></div>
+		<div class="shuffleMe watermelon-image" onclick="getCorrectSumAnswer(this)"  id = "number5" style="padding: 10px;"></div>
+		<div class="shuffleMe apple-image" onclick="getCorrectSumAnswer(this)"  id = "number6" style="display: inline;padding: 12px;"></div>
+		<div class="shuffleMe banana-image" onclick="getCorrectSumAnswer(this)"  id = "number7" style="padding: 10px;"></div>
+		<div class="shuffleMe apple-image" onclick="getCorrectSumAnswer(this)"  id = "number8" style="display: inline;padding: 10px;"></div>
+		<div class="shuffleMe apple-image" onclick="getCorrectSumAnswer(this)"  id = "number9" style="display: inline;padding: 10px;"></div>
+		<br/><br/>
+		<div id = "numbers-to-be-computed" style="background: #ffffff;text-align: center;width:15%; margin-left: 40%; border-radius: 20px;">
+			<div id = "first-number" style="display: inline;"></div>
+			<div id = "second-number" style="display: inline;"></div>
+		</div>
+		<div class = "score-table">
+			<div style="font-weight: bold;">Score </div>
+			<div id = "number-hits">HITS: </div>
+			<div id = "number-miss">MISS: </div>
+			<div>TIME:&nbsp;&nbsp; <span id="show-timer">0</span></div>
+		</div>
+	</div>
+</div>
+
+<!-- Substraction Interface -->
+<div id = "substraction-interface">
+	<div  style="font-weight: bold;padding-left:35%;padding-top:5px;margin-top:5px;">LEVEL 2 - SUBSTRACTION</div>
+		   <div id = 'container2'>
+			   <div class="shuffleMe2 banana-image" onclick="getCorrectSubAnswer(this)"  id = "number1-sub"></div>
+			   <div class="shuffleMe2 apple-image" onclick="getCorrectSubAnswer(this)"  id = "number2-sub" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe2 watermelon-image" onclick="getCorrectSubAnswer(this)"  id = "number3-sub" style="padding: 10px;"></div>
+			   <div class="shuffleMe2 banana-image" onclick="getCorrectSubAnswer(this)"  id = "number4-sub" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe2 banana-image" onclick="getCorrectSubAnswer(this)"  id = "number5-sub" style="padding: 10px;"></div>
+			   <div class="shuffleMe2 apple-image" onclick="getCorrectSubAnswer(this)"  id = "number6-sub" style="display: inline;padding: 12px;"></div>
+			   <div class="shuffleMe2 banana-image" onclick="getCorrectSubAnswer(this)"  id = "number7-sub" style="padding: 10px;"></div>
+			   <div class="shuffleMe2 apple-image" onclick="getCorrectSubAnswer(this)"  id = "number8-sub" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe2 apple-image" onclick="getCorrectSubAnswer(this)"  id = "number9-sub" style="display: inline;padding: 10px;"></div>
+			   <br/><br/>
+			   <div id = "numbers-to-be-computed" style="background: #ffffff;text-align: center;width:15%; margin-left: 40%; border-radius: 20px;">
+				   <div id = "first-number-sub" style="display: inline;"></div>
+				   <div id = "second-number-sub" style="display: inline;"></div>
+			   </div>
+			   <div class = "score-table">
+					   <div style="font-weight: bold;">Score </div>
+					   <div id = "number-hits2">HITS: </div>
+					   <div id = "number-miss2">MISS: </div>
+					   <div>TIME:&nbsp;&nbsp; <span id="show-timer2">0</span></div>
+			   </div>
+			</div>
+</div>
+
+<!-- Divison Interface -->
+<div id = "division-interface">
+	<div  style="font-weight: bold;padding-left:35%;padding-top:5px;margin-top:5px;">LEVEL 3 - DIVISION</div>	
+		   <div id = 'container3'>
+			   <div class="shuffleMe3 banana-image" onclick="getCorrectDivisionAnswer(this)"  id = "number1-div" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe3 apple-image" onclick="getCorrectDivisionAnswer(this)"  id = "number2-div" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe3 watermelon-image" onclick="getCorrectDivisionAnswer(this)"  id = "number3-div" style="padding: 10px;"></div>
+			   <div class="shuffleMe3 banana-image" onclick="getCorrectDivisionAnswer(this)"  id = "number4-div" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe3 watermelon-image" onclick="getCorrectDivisionAnswer(this)"  id = "number5-div" style="padding: 10px;"></div>
+			   <div class="shuffleMe3 apple-image" onclick="getCorrectDivisionAnswer(this)"  id = "number6-div" style="display: inline;padding: 12px;"></div>
+			   <div class="shuffleMe3 banana-image" onclick="getCorrectDivisionAnswer(this)"  id = "number7-div" style="padding: 10px;"></div>
+			   <div class="shuffleMe3 apple-image" onclick="getCorrectDivisionAnswer(this)"  id = "number8-div" style="display: inline;padding: 10px;"></div>
+			   <div class="shuffleMe3 apple-image" onclick="getCorrectDivisionAnswer(this)"  id = "number9-div" style="display: inline;padding: 10px;"></div>
+			   <br/><br/>
+			   <div id = "numbers-to-be-computed" style="background: #ffffff;text-align: center;width:15%; margin-left: 40%; border-radius: 20px;">
+			   <div id = "first-number-div" style="display: inline;"></div>
+			   <div id = "second-number-div" style="display: inline;"></div>
+			   </div>
+			   <div class = "score-table">
+					   <div style="font-weight: bold;">Score </div>
+					   <div id = "number-hits3">HITS: </div>
+					   <div id = "number-miss3">MISS: </div>
+					   <div>TIME:&nbsp;&nbsp; <span id="show-timer3">0</span></div>
+			   </div>
+			</div>
+</div>
+
+
+<!-- Report Interface -->
+<div id = "report-interface">
+	<div  style="font-weight: bold;padding-left: 20%;text-decoration: underline">Player's Report</div>	
+		<div class = "player-table">
+			<div style="font-weight: bold;" id = "player-name"></div>
+			<div style="font-weight: bold;" id = "player-age"></div>
+			<hr/>
+			<p style="font-weight: bold;">Score For Level 1</p>
+			<div>
+				<div id = "report-hits-level1"></div>
+				<div id = "report-misses-level1"></div>
+			</div>
+			<hr/>
+			<p style="font-weight: bold;">Score For Level 2</p>
+			<div>
+				<div id = "report-hits-level2"></div>
+				<div id = "report-misses-level2"></div>
+			</div>
+			<hr/>
+			<p style="font-weight: bold;">Score For Level 3</p>
+			<div>
+				<div id = "report-hits-level3"></div>
+				<div id = "report-misses-level3"></div>
+			</div>
+		</div>
+</div>
+
+<script src = "js/app.js"></script>
+</body>
+</html>
