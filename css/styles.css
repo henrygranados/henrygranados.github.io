@@ -20,9 +20,11 @@ body {
 	height: auto;
 	font-family: 'Raleway', sans-serif;
 	color:#373648;
-	//background-color:#EEEFE5;
-	background:transparent url(../images/blackwall.jpg) no-repeat center center fixed;
-
+	background-color: #000;
+	background-image: url(../images/blackwall.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
 
 	-webkit-background-size: cover;
 			-moz-background-size: cover;
