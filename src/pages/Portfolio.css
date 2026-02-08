@@ -1,0 +1,65 @@
+.portfolio {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.portfolio-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-description {
+  flex: 1;
+  text-align: left;
+}
+
+.video-description h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #000;
+}
+
+.video-description p {
+  font-size: 1.2rem;
+  color: #323131;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.video-description .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+.portfolio-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* border: 8px solid #000; */
+  border-radius: 40px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portfolio-content video {
+  /* width: 100%; */
+  max-width: 960px;
+  height: 540px;
+  display: block;
+  object-fit: cover;
+  border-radius: 40px;
+}
