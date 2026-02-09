@@ -1,24 +1,99 @@
 .portfolio {
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .portfolio-layout {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
+  max-width: 960px;
+}
+
+.portfolio-layout.tablet-layout {
+  max-width: 80%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.portfolio-layout.tablet-layout-reverse {
+  max-width: 960px;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.portfolio-layout.tablet-layout-reverse .video-description {
+  flex: 1;
+  text-align: left;
+  margin-top: 0;
+  max-width: none;
+}
+
+.portfolio-layout.tablet-layout-reverse .video-description .skills {
+  justify-content: flex-start;
+}
+
+.portfolio-layout.tablet-layout .video-description {
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 600px;
+}
+
+.portfolio-layout.tablet-layout .video-description .skills {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .portfolio-layout {
+    flex-direction: column;
+  }
 }
 
 .portfolio-content {
   flex: 1;
   position: relative;
   overflow: hidden;
+  background: #000;
+  border-radius: 50px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid #1f1f1f;
+  min-height: 600px;
+}
+
+.portfolio-content::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 25px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  z-index: 3;
+}
+
+.portfolio-content::after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  z-index: 4;
 }
 
 .video-description {
   flex: 1;
   text-align: left;
+  margin-top: -8rem;
 }
 
 .video-description h2 {
@@ -42,24 +117,11 @@
   justify-content: flex-start;
 }
 
-.portfolio-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* border: 8px solid #000; */
-  border-radius: 40px;
-  pointer-events: none;
-  z-index: 2;
-}
-
 .portfolio-content video {
-  /* width: 100%; */
-  max-width: 960px;
-  height: 540px;
+  width: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-  border-radius: 40px;
+  border-radius: 35px;
+  position: relative;
+  z-index: 1;
 }

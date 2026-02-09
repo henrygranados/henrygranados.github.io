@@ -1,9 +1,12 @@
-.skills-columns {
+* {
+  font-family: "Public Sans", sans-serif;
+}
+/* .skills-columns {
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
   align-items: flex-start;
-}
+} */
 
 .skills-column {
   flex: 0 0 auto;

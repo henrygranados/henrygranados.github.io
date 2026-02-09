@@ -13,8 +13,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import {
   faSquareCaretUp,
-  faBook,
   faCheck,
+  faCode,
+  faGear,
+  faWrench,
+  faList,
 } from "@fortawesome/free-solid-svg-icons";
 
 const CoursesSection = styled.div({
@@ -38,11 +41,15 @@ interface StackOverflowData {
   };
 }
 
+let hasAnimatedGlobal = false;
+
 export default function Home() {
   const [soData, setSoData] = useState<StackOverflowData | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [iconsAnimated, setIconsAnimated] = useState(false);
   const theme = useTheme();
   const profileRef = useRef<HTMLDivElement>(null);
+  const iconsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,6 +69,33 @@ export default function Home() {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimatedGlobal) {
+            setIconsAnimated(true);
+            hasAnimatedGlobal = true;
+          }
+        });
+      },
+      {
+        threshold: 0,
+        rootMargin: "-50% 0px -50% 0px",
+      },
+    );
+
+    if (iconsRef.current) {
+      observer.observe(iconsRef.current);
+    }
+
+    return () => {
+      if (iconsRef.current) {
+        observer.unobserve(iconsRef.current);
+      }
+    };
   }, []);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -91,7 +125,6 @@ export default function Home() {
   const softwareSkillsList = [
     "Java SE/EE Development",
     "Python",
-    "Selenium WebDriver",
     "RESTful Web Services",
     "Data-Driven Test Automation",
     "C#",
@@ -116,11 +149,10 @@ export default function Home() {
               I'm a Lead Software Engineer with{" "}
               <strong>11+ years of experience</strong> designing, building, and
               scaling frontend and full-stack web applications. Expert in React,
-              Angular, JavaScript, TypeScript, Java, and modern cloud-based
+              Angular, JavaScript, TypeScript, Java, and modern cloud based
               architectures. Proven leader with experience mentoring engineers,
-              defining best practices, improving delivery processes, and
-              building high- impact products used by thousands of users. Strong
-              background in Agile/Scrum, CI/CD and enterprise-scale systems.
+              improving delivery processes, and building high- impact products
+              used by thousands of users.
             </p>
           </div>
         </div>
@@ -141,13 +173,13 @@ export default function Home() {
             >
               Udemy Instructor
             </a>
-            , where I’ve taught thousands of students and{" "}
-            <strong>maintain a 4.6/5 instructor rating</strong>.
+            , where <strong>I’ve taught thousands of students</strong> and{" "}
+            <strong>maintain a 4.8/5 instructor rating</strong>.
           </p>
           <CoursesSection>
             <CoursesHeader>
               My <img src={udemyImage} alt="" width={91} height={34} />
-              Courses <FontAwesomeIcon icon={faBook} color={"#A435F0"} />
+              Courses
             </CoursesHeader>
             <div className="skills">
               {skills.map((skill) => (
@@ -156,12 +188,48 @@ export default function Home() {
             </div>
           </CoursesSection>
         </div>
+
+        <div className="skills-icons-banner">
+          <div className="skills-columns" ref={iconsRef}>
+            <div className="skills-column">
+              <div
+                className={`icon-wrapper ${iconsAnimated ? "animated" : ""}`}
+              >
+                <div className="icon-circle">
+                  <FontAwesomeIcon icon={faCode} size="3x" color="#000" />
+                </div>
+                <p className="icon-label">WEB DEVELOPMENT</p>
+              </div>
+            </div>
+            <div className="skills-column">
+              <div
+                className={`icon-wrapper ${iconsAnimated ? "animated" : ""}`}
+              >
+                <div className="icon-circle">
+                  <FontAwesomeIcon icon={faGear} size="3x" color="#000" />
+                </div>
+                <p className="icon-label">SOFTWARE DEVELOPMENT</p>
+              </div>
+            </div>
+            <div className="skills-column">
+              <div
+                className={`icon-wrapper ${iconsAnimated ? "animated" : ""}`}
+              >
+                <div className="icon-circle">
+                  <FontAwesomeIcon icon={faWrench} size="3x" color="#000" />
+                </div>
+                <p className="icon-label">TEST AUTOMATION</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <Divider />
         <div className="section">
-          <h2>Skills</h2>
+          <h2>
+            <FontAwesomeIcon icon={faList} color={"#eea236"} /> Skills
+          </h2>
           <div className="skills-columns">
             <div className="skills-column">
-              <h3>Web Development</h3>
               <ul className="skills-list">
                 {skillsList.map((skill) => (
                   <li key={skill}>
@@ -171,11 +239,19 @@ export default function Home() {
               </ul>
             </div>
             <div className="skills-column">
-              <h3>Software Development</h3>
               <ul className="skills-list">
                 {softwareSkillsList.map((skill) => (
                   <li key={skill}>
-                    <FontAwesomeIcon icon={faCheck} color={"#5cb85c"} /> {skill}
+                    <FontAwesomeIcon icon={faCheck} color={"#4cae4c"} /> {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="skills-column">
+              <ul className="skills-list">
+                {["Selenium WebDriver", "SOAP UI"].map((skill) => (
+                  <li key={skill}>
+                    <FontAwesomeIcon icon={faCheck} color={"#4cae4c"} /> {skill}
                   </li>
                 ))}
               </ul>
