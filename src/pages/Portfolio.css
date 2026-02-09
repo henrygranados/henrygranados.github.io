@@ -1,3 +1,6 @@
+h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .portfolio {
   padding: 2rem;
   max-width: 960px;
@@ -6,6 +9,7 @@
 
 .portfolio-layout {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
   max-width: 960px;
@@ -21,6 +25,7 @@
 .portfolio-layout.tablet-layout-reverse {
   max-width: 960px;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0 auto;
 }
@@ -48,6 +53,15 @@
 
 @media (max-width: 768px) {
   .portfolio-layout {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .video-description {
+    margin-top: 0 !important;
+  }
+
+  .portfolio-layout.tablet-layout-reverse {
     flex-direction: column;
   }
 }

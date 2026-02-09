@@ -43,7 +43,7 @@ export default function Experience() {
         "Led cross-functional teams including developers, QA, and database engineers",
         "Built enterprise web applications used daily across the organization",
         "Delivered end-to-end UI solutions improving usability and performance",
-        "Tech stack: Java, JavaScript, TypeScript, Angular, Redux, Jasmine, Jest, Cypress, HTML, CSS, Sass",
+        "Tech stack: JavaScript, TypeScript, React, Angular, Redux, Jasmine, Jest, Cypress, HTML, CSS, Sass",
       ],
     },
     {

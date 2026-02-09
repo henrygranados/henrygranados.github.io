@@ -137,7 +137,7 @@ export default function Portfolio() {
             gameplay mechanics.
           </p>
           <div className="skills">
-            {["JavaScript", "HTML", "CSS"].map((skill) => (
+            {["JavaScript", "HTML Canvas", "CSS"].map((skill) => (
               <Chip key={skill}>{skill}</Chip>
             ))}
           </div>
@@ -169,7 +169,7 @@ export default function Portfolio() {
       <Divider />
       <div className="portfolio-layout tablet-layout-reverse">
         <div className="video-description">
-          <h2>Carousel - Slider Images</h2>
+          <h2>Carousel - Slider</h2>
           <p>
             This Carousel image slider is built using React to provide a smooth
             and interactive way to display images. It supports seamless
