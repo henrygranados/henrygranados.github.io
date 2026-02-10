@@ -2,29 +2,6 @@ import "./Experience.css";
 import { Chip } from "../components/SkillTag";
 
 export default function Experience() {
-  const techVariants: Record<
-    string,
-    {
-      variant:
-        | "primary"
-        | "primaryLight"
-        | "react"
-        | "success"
-        | "warning"
-        | "danger";
-      outline?: boolean;
-    }
-  > = {
-    JavaScript: { variant: "success" },
-    TypeScript: { variant: "primaryLight" },
-    "Ruby on Rails": { variant: "danger" },
-    React: { variant: "react" },
-    Angular: { variant: "danger" },
-    HTML: { variant: "warning", outline: true },
-    Java: { variant: "danger" },
-    "Java EE": { variant: "danger" },
-  };
-
   const experiences = [
     {
       company: "Aragorn AI (Dallas, TX)",
@@ -220,16 +197,8 @@ export default function Experience() {
               </ul>
               <div className="tech-stack">
                 {exp.techStack.map((tech, idx) => {
-                  const config = techVariants[tech] || {
-                    variant: "primaryLight",
-                    outline: true,
-                  };
                   return (
-                    <Chip
-                      key={idx}
-                      variant={config.variant}
-                      outline={config.outline}
-                    >
+                    <Chip key={idx} outline>
                       {tech}
                     </Chip>
                   );
