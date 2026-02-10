@@ -183,7 +183,9 @@ export default function Home() {
             </CoursesHeader>
             <div className="skills">
               {skills.map((skill) => (
-                <Chip key={skill}>{skill}</Chip>
+                <Chip key={skill} outline>
+                  {skill}
+                </Chip>
               ))}
             </div>
           </CoursesSection>
