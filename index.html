@@ -11,6 +11,15 @@
       rel="stylesheet"
     />
     <title>Henry Granados</title>
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <script type="module" crossorigin src="/assets/index-Bxxq8GUN.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-M_Bq7-TP.css">
   </head>
