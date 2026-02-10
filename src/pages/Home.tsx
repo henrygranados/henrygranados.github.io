@@ -124,6 +124,7 @@ export default function Home() {
 
   const softwareSkillsList = [
     "Java SE/EE Development",
+    "Ruby on Rails",
     "Python",
     "RESTful Web Services",
     "Data-Driven Test Automation",
