@@ -36,6 +36,25 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.profile-image-skeleton {
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .profile-info {
   flex: 1;
 }
@@ -319,4 +338,19 @@
   font-size: 1.1rem;
   color: #323131;
   margin-bottom: 0.5rem;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-to-top img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.2);
 }

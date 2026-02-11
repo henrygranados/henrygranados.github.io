@@ -8,11 +8,11 @@ import Divider from "../components/Divider";
 import profileImage from "../assets/images/linkedIn-pic.jpeg";
 import medalsImage from "../assets/images/medals.png";
 import udemyImage from "../assets/images/logo-udemy.svg";
+import upArrowImage from "../assets/images/up-arrow.jpg";
 import { getStackOverflowData } from "../utils/stackOverflowCache";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import {
-  faSquareCaretUp,
   faCheck,
   faCode,
   faGear,
@@ -47,6 +47,7 @@ export default function Home() {
   const [soData, setSoData] = useState<StackOverflowData | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [iconsAnimated, setIconsAnimated] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const theme = useTheme();
   const profileRef = useRef<HTMLDivElement>(null);
   const iconsRef = useRef<HTMLDivElement>(null);
@@ -137,10 +138,13 @@ export default function Home() {
     <div className="home">
       <div className="home-content">
         <div className="profile-header">
+          {!imageLoaded && <div className="profile-image-skeleton" />}
           <img
             src={profileImage}
             alt="Henry Granados"
             className="profile-image"
+            onLoad={() => setImageLoaded(true)}
+            style={{ display: imageLoaded ? "block" : "none" }}
           />
           <div className="profile-info" ref={profileRef}>
             <p className="intro-text">
@@ -152,7 +156,7 @@ export default function Home() {
               scaling frontend and full-stack web applications. Expert in React,
               Angular, JavaScript, TypeScript, Java, and modern cloud based
               architectures. Proven leader with experience mentoring engineers,
-              improving delivery processes, and building high- impact products
+              improving delivery processes, and building high-impact products
               used by thousands of users.
             </p>
           </div>
@@ -268,7 +272,7 @@ export default function Home() {
             size="3x"
             color={theme.color.stackOverflow}
           />
-          <div style={{ paddingBottom: 20 }}>
+          <div style={{ paddingBottom: "1.25rem" }}>
             <a
               href="https://stackoverflow.com/users/4084160/henrydev?tab=profile"
               target="_blank"
@@ -285,7 +289,7 @@ export default function Home() {
             </p>
             <p className="reputation-label">points</p>
           </div>
-          <br />
+          <br /> <br />
           <Medals
             image={medalsImage}
             gold={soData?.badge_counts.gold || 0}
@@ -296,7 +300,7 @@ export default function Home() {
       </div>
       {showScrollTop && (
         <button className="scroll-to-top" onClick={scrollToTop}>
-          <FontAwesomeIcon icon={faSquareCaretUp} size="3x" color={"#000"} />
+          <img src={upArrowImage} alt="Scroll to top" width={60} height={60} />
         </button>
       )}
     </div>

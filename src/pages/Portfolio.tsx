@@ -7,6 +7,8 @@ import { Chip } from "../components/SkillTag";
 import styled from "styled-components";
 import "./Portfolio.css";
 import Divider from "../components/Divider";
+import blackwallImage from "../assets/images/blackwall.jpg";
+import { useState } from "react";
 
 const IPhoneFrame = styled.div({
   flex: 0.6,
@@ -118,97 +120,157 @@ const ITabletFrame = styled.div({
   },
 });
 
+const VideoSkeleton = styled.div<{ $tablet?: boolean }>(({ $tablet }) => ({
+  width: "100%",
+  height: $tablet ? "400px" : "450px",
+  borderRadius: $tablet ? "20px" : "35px",
+  background: "linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%)",
+  backgroundSize: "200% 100%",
+  animation: "shimmer 1.5s infinite",
+  position: "relative",
+  zIndex: 1,
+}));
+
 export default function Portfolio() {
+  const [videosLoaded, setVideosLoaded] = useState({
+    spaceship: false,
+    inventory: false,
+    carousel: false,
+    chat: false,
+  });
   return (
-    <div className="portfolio">
-      <div className="portfolio-layout">
-        <IPhoneFrame>
-          <SpeakerDot />
-          <SpeakerLine />
-          <video autoPlay loop muted>
-            <source src={spaceShipVideo} type="video/mp4" />
-          </video>
-        </IPhoneFrame>
-        <div className="video-description">
-          <h2>Spaceship Video Game</h2>
-          <p>
-            This video game was built in vanilla JavaScript. The game features
-            real-time player controls, dynamic movement, and interactive
-            gameplay mechanics.
-          </p>
-          <div className="skills">
-            {["JavaScript", "HTML Canvas", "CSS"].map((skill) => (
-              <Chip key={skill}>{skill}</Chip>
-            ))}
+    <div
+      className="portfolio-background"
+      style={{ backgroundImage: `url(${blackwallImage})`, backgroundColor: '#000' }}
+    >
+      <div className="portfolio">
+        <div className="portfolio-layout">
+          <IPhoneFrame>
+            <SpeakerDot />
+            <SpeakerLine />
+            {!videosLoaded.spaceship && <VideoSkeleton />}
+            <video
+              autoPlay
+              loop
+              muted
+              onLoadedData={() =>
+                setVideosLoaded((prev) => ({ ...prev, spaceship: true }))
+              }
+              style={{ display: videosLoaded.spaceship ? "block" : "none" }}
+            >
+              <source src={spaceShipVideo} type="video/mp4" />
+            </video>
+          </IPhoneFrame>
+          <div className="video-description">
+            <h2>Spaceship Video Game</h2>
+            <p>
+              This video game was built in vanilla JavaScript. The game features
+              real-time player controls, dynamic movement, and interactive
+              gameplay mechanics.
+            </p>
+            <div className="skills">
+              {["JavaScript", "HTML Canvas", "CSS"].map((skill) => (
+                <Chip key={skill}>{skill}</Chip>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <Divider />
-      <div className="portfolio-layout tablet-layout">
-        <div className="video-description">
-          <h2>Manager's Inventory</h2>
-          <p>
-            Built using React and Redux to manage inventory data efficiently. It
-            allows users to add, edit, and delete entries through a centralized
-            state management system.
-          </p>
-          <div className="skills">
-            {["React", "Redux", "JavaScript", "HTML/CSS"].map((skill) => (
-              <Chip key={skill}>{skill}</Chip>
-            ))}
+        <Divider />
+        <div className="portfolio-layout tablet-layout">
+          <div className="video-description">
+            <h2>Manager's Inventory</h2>
+            <p>
+              Built using React and Redux to manage inventory data efficiently.
+              It allows users to add, edit, and delete entries through a
+              centralized state management system.
+            </p>
+            <div className="skills">
+              {["React", "Redux", "JavaScript", "HTML/CSS"].map((skill) => (
+                <Chip key={skill}>{skill}</Chip>
+              ))}
+            </div>
           </div>
+          <ITabletFrame>
+            {!videosLoaded.inventory && <VideoSkeleton $tablet />}
+            <video
+              autoPlay
+              loop
+              muted
+              onLoadedData={() =>
+                setVideosLoaded((prev) => ({ ...prev, inventory: true }))
+              }
+              style={{ display: videosLoaded.inventory ? "block" : "none" }}
+            >
+              <source src={managerInventoryVideo} type="video/mp4" />
+            </video>
+          </ITabletFrame>
         </div>
-        <ITabletFrame>
-          <video autoPlay loop muted>
-            <source src={managerInventoryVideo} type="video/mp4" />
-          </video>
-        </ITabletFrame>
-      </div>
-      <br />
-      <br />
-      <Divider />
-      <div className="portfolio-layout tablet-layout-reverse">
-        <div className="video-description">
-          <h2>Carousel - Slider</h2>
-          <p>
-            This Carousel image slider is built using React to provide a smooth
-            and interactive way to display images. It supports seamless
-            navigation between slides, responsive layout behavior, and a
-            user-friendly interface.
-          </p>
-          <div className="skills">
-            {["React", "JavaScript", "HTML/CSS"].map((skill) => (
-              <Chip key={skill}>{skill}</Chip>
-            ))}
+        <br />
+        <br />
+        <Divider />
+        <div className="portfolio-layout tablet-layout-reverse">
+          <div className="video-description">
+            <h2>Carousel - Slider</h2>
+            <p>
+              This Carousel image slider is built using React to provide a
+              smooth and interactive way to display images. It supports seamless
+              navigation between slides, responsive layout behavior, and a
+              user-friendly interface.
+            </p>
+            <div className="skills">
+              {["React", "JavaScript", "HTML/CSS"].map((skill) => (
+                <Chip key={skill}>{skill}</Chip>
+              ))}
+            </div>
           </div>
+          <ITabletFrame>
+            {!videosLoaded.carousel && <VideoSkeleton $tablet />}
+            <video
+              autoPlay
+              loop
+              muted
+              onLoadedData={() =>
+                setVideosLoaded((prev) => ({ ...prev, carousel: true }))
+              }
+              style={{ display: videosLoaded.carousel ? "block" : "none" }}
+            >
+              <source src={carouselVideo} type="video/mp4" />
+            </video>
+          </ITabletFrame>
         </div>
-        <ITabletFrame>
-          <video autoPlay loop muted>
-            <source src={carouselVideo} type="video/mp4" />
-          </video>
-        </ITabletFrame>
-      </div>
-      <br />
-      <br />
-      <Divider />
-      <div className="portfolio-layout tablet-layout">
-        <div className="video-description">
-          <h2>Chat App with NodeJS</h2>
-          <p>
-            This real-time chat application is built with Node.js and Socket.IO
-            to support instant communication between multiple users.
-          </p>
-          <div className="skills">
-            {["JavaScript", "NodeJS", "Socket.io", "HTML/CSS"].map((skill) => (
-              <Chip key={skill}>{skill}</Chip>
-            ))}
+        <br />
+        <br />
+        <Divider />
+        <div className="portfolio-layout tablet-layout">
+          <div className="video-description">
+            <h2>Chat App with NodeJS</h2>
+            <p>
+              This real-time chat application is built with Node.js and
+              Socket.IO to support instant communication between multiple users.
+            </p>
+            <div className="skills">
+              {["JavaScript", "NodeJS", "Socket.io", "HTML/CSS"].map(
+                (skill) => (
+                  <Chip key={skill}>{skill}</Chip>
+                ),
+              )}
+            </div>
           </div>
+          <ITabletFrame>
+            {!videosLoaded.chat && <VideoSkeleton $tablet />}
+            <video
+              autoPlay
+              loop
+              muted
+              onLoadedData={() =>
+                setVideosLoaded((prev) => ({ ...prev, chat: true }))
+              }
+              style={{ display: videosLoaded.chat ? "block" : "none" }}
+            >
+              <source src={chatNodeJSVideo} type="video/mp4" />
+            </video>
+          </ITabletFrame>
         </div>
-        <ITabletFrame>
-          <video autoPlay loop muted>
-            <source src={chatNodeJSVideo} type="video/mp4" />
-          </video>
-        </ITabletFrame>
       </div>
     </div>
   );

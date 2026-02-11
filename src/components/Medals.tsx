@@ -5,6 +5,21 @@ const MedalsContainer = styled.div({
   display: "inline-block",
 });
 
+const MedalLabel = styled.div<{ position: "gold" | "silver" | "bronze" }>(
+  {
+    position: "absolute",
+    top: "-20px",
+    fontSize: "0.9rem",
+    fontWeight: 600,
+    color: "#666",
+  },
+  ({ position }) => ({
+    left:
+      position === "gold" ? "16.5%" : position === "silver" ? "50%" : "83.5%",
+    transform: "translateX(-50%)",
+  }),
+);
+
 const MedalsImage = styled.img({
   display: "block",
   height: "50px",
@@ -35,6 +50,9 @@ interface MedalsProps {
 export default function Medals({ image, gold, silver, bronze }: MedalsProps) {
   return (
     <MedalsContainer>
+      <MedalLabel position="gold">Gold</MedalLabel>
+      <MedalLabel position="silver">Silver</MedalLabel>
+      <MedalLabel position="bronze">Bronze</MedalLabel>
       <MedalsImage src={image} alt="Medals" />
       <MedalCount position="gold">{gold}</MedalCount>
       <MedalCount position="silver">{silver}</MedalCount>
