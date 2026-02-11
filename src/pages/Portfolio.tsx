@@ -7,7 +7,6 @@ import { Chip } from "../components/SkillTag";
 import styled from "styled-components";
 import "./Portfolio.css";
 import Divider from "../components/Divider";
-import blackwallImage from "../assets/images/blackwall.jpg";
 import { useState } from "react";
 
 const IPhoneFrame = styled.div({
@@ -139,10 +138,7 @@ export default function Portfolio() {
     chat: false,
   });
   return (
-    <div
-      className="portfolio-background"
-      style={{ backgroundImage: `url(${blackwallImage})`, backgroundColor: '#000' }}
-    >
+    <div className="portfolio-background">
       <div className="portfolio">
         <div className="portfolio-layout">
           <IPhoneFrame>

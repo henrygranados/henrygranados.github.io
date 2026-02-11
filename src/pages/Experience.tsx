@@ -84,7 +84,6 @@ export default function Experience() {
         "Cypress",
         "HTML",
         "CSS",
-        "Sass",
       ],
     },
     {
