@@ -6,7 +6,6 @@ import carouselVideo from "../assets/react-slider.m4v";
 import { Chip } from "../components/SkillTag";
 import styled from "styled-components";
 import "./Portfolio.css";
-import Divider from "../components/Divider";
 import { useState } from "react";
 
 const IPhoneFrame = styled.div({
