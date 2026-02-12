@@ -8,7 +8,7 @@ import Divider from "../components/Divider";
 import profileImage from "../assets/images/linkedIn-pic.jpeg";
 import medalsImage from "../assets/images/medals.png";
 import udemyImage from "../assets/images/logo-udemy.svg";
-import upArrowImage from "../assets/images/up-arrow.jpg";
+import upArrowImage from "../assets/images/up-arrow.svg";
 import { getStackOverflowData } from "../utils/stackOverflowCache";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStackOverflow } from "@fortawesome/free-brands-svg-icons";

@@ -11,6 +11,7 @@ import { useState } from "react";
 
 const IPhoneFrame = styled.div({
   flex: 0.6,
+  minWidth: 300,
   position: "relative",
   overflow: "hidden",
   background: "#000",
@@ -86,6 +87,7 @@ const SpeakerLine = styled.div({
 
 const ITabletFrame = styled.div({
   flex: 2,
+  minWidth: 400,
   position: "relative",
   overflow: "hidden",
   background: "#000",
