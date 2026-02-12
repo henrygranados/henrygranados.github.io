@@ -1,4 +1,3 @@
-//import spaceShipVideo from "../assets/space-ship.m4v";
 import spaceShipVideo from "../assets/nave.mov";
 import managerInventoryVideo from "../assets/manager-inventory.m4v";
 import chatNodeJSVideo from "../assets/chat-nodejs.m4v";
@@ -201,9 +200,9 @@ const PCKeyboard = styled.div({
   transform: "perspective(1000px) rotateX(25deg)",
   transformOrigin: "center top",
   "@media (max-width: 768px)": {
-    maxWidth: "90%",
-    gap: "2px",
-    padding: "10px",
+    maxWidth: "85%",
+    gap: "1px",
+    padding: "8px",
   },
 });
 
@@ -219,6 +218,10 @@ const PCKey = styled.div<{ $span?: number }>(({ $span }) => ({
     "0 2px 4px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.2)",
   gridColumn: $span ? `span ${$span}` : "span 1",
   transform: "translateZ(2px)",
+  "@media (max-width: 768px)": {
+    padding: "5px 1px",
+    fontSize: "0.55rem",
+  },
 }));
 
 export default function Portfolio() {
