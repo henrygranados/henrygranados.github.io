@@ -11,7 +11,8 @@ import { useState } from "react";
 
 const IPhoneFrame = styled.div({
   flex: 0.6,
-  minWidth: 300,
+  minWidth: "300px",
+  maxWidth: "100%",
   position: "relative",
   overflow: "hidden",
   background: "#000",
@@ -22,6 +23,11 @@ const IPhoneFrame = styled.div({
   minHeight: "520px",
   display: "flex",
   alignItems: "center",
+  "@media (max-width: 768px)": {
+    minWidth: "0",
+    width: "100%",
+    maxWidth: "100%",
+  },
   "&::before": {
     content: '""',
     position: "absolute",
@@ -51,6 +57,7 @@ const IPhoneFrame = styled.div({
   },
   "& video": {
     width: "100%",
+    maxWidth: "100%",
     height: "auto",
     display: "block",
     borderRadius: "35px",
@@ -87,7 +94,8 @@ const SpeakerLine = styled.div({
 
 const ITabletFrame = styled.div({
   flex: 2,
-  minWidth: 400,
+  minWidth: "400px",
+  maxWidth: "100%",
   position: "relative",
   overflow: "hidden",
   background: "#000",
@@ -99,6 +107,12 @@ const ITabletFrame = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  boxSizing: "border-box",
+  "@media (max-width: 768px)": {
+    minWidth: "0",
+    width: "calc(100vw - 2rem)",
+    maxWidth: "100%",
+  },
   "&::after": {
     content: '""',
     position: "absolute",
@@ -113,6 +127,7 @@ const ITabletFrame = styled.div({
   },
   "& video": {
     width: "100%",
+    maxWidth: "100%",
     height: "auto",
     display: "block",
     borderRadius: "20px",

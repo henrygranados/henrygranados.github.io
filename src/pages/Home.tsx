@@ -300,7 +300,7 @@ export default function Home() {
       </div>
       {showScrollTop && (
         <button className="scroll-to-top" onClick={scrollToTop}>
-          <img src={upArrowImage} alt="Scroll to top" width={60} height={60} />
+          <img src={upArrowImage} alt="Scroll to top" width={50} height={50} />
         </button>
       )}
     </div>

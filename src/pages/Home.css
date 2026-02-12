@@ -237,6 +237,24 @@
   box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+@media (max-width: 1024px) {
+  .skills-icons-banner .skills-columns {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .icon-label {
+    font-size: 0.9rem;
+    white-space: normal;
+    max-width: 120px;
+  }
+
+  .icon-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .icon-circle {
     width: 100px;
