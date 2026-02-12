@@ -147,6 +147,81 @@ const VideoSkeleton = styled.div<{ $tablet?: boolean }>(({ $tablet }) => ({
   zIndex: 1,
 }));
 
+const PCSetup = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: "1.2rem",
+  flex: 2,
+});
+
+const Monitor = styled.div({
+  position: "relative",
+  width: "100%",
+  maxWidth: "850px",
+  background: "#1a1a1a",
+  borderRadius: "20px 20px 0 0",
+  padding: "20px",
+  boxShadow: "0 10px 40px rgba(0, 0, 0, 0.4)",
+  border: "3px solid #2a2a2a",
+  "@media (max-width: 768px)": {
+    maxWidth: "90%",
+  },
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    bottom: "-30px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "140px",
+    height: "30px",
+    background: "linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%)",
+    borderRadius: "0 0 10px 10px",
+  },
+});
+
+const MonitorStand = styled.div({
+  width: "180px",
+  height: "10px",
+  background: "linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%)",
+  borderRadius: "5px",
+  marginTop: "20px",
+  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+});
+
+const PCKeyboard = styled.div({
+  display: "grid",
+  gridTemplateColumns: "repeat(15, 1fr)",
+  gap: "4px",
+  padding: "15px",
+  background: "linear-gradient(145deg, #2a2a2a, #1a1a1a)",
+  borderRadius: "10px",
+  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.4)",
+  width: "100%",
+  maxWidth: "780px",
+  transform: "perspective(1000px) rotateX(25deg)",
+  transformOrigin: "center top",
+  "@media (max-width: 768px)": {
+    maxWidth: "90%",
+    gap: "2px",
+    padding: "10px",
+  },
+});
+
+const PCKey = styled.div<{ $span?: number }>(({ $span }) => ({
+  background: "linear-gradient(145deg, #3a3a3a, #2a2a2a)",
+  borderRadius: "4px",
+  padding: "8px 4px",
+  textAlign: "center",
+  fontWeight: 500,
+  fontSize: "0.7rem",
+  color: "#ccc",
+  boxShadow:
+    "0 2px 4px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(0, 0, 0, 0.2)",
+  gridColumn: $span ? `span ${$span}` : "span 1",
+  transform: "translateZ(2px)",
+}));
+
 export default function Portfolio() {
   const [videosLoaded, setVideosLoaded] = useState({
     spaceship: false,
@@ -157,6 +232,110 @@ export default function Portfolio() {
   return (
     <div className="portfolio-background">
       <div className="portfolio">
+        <div className="portfolio-layout tablet-layout">
+          <PCSetup>
+            <Monitor>
+              {!videosLoaded.inventory && <VideoSkeleton $tablet />}
+              <video
+                autoPlay
+                loop
+                muted
+                onLoadedData={() =>
+                  setVideosLoaded((prev) => ({ ...prev, inventory: true }))
+                }
+                style={{
+                  display: videosLoaded.inventory ? "block" : "none",
+                  width: "100%",
+                  borderRadius: "10px",
+                }}
+              >
+                <source src={managerInventoryVideo} type="video/mp4" />
+              </video>
+            </Monitor>
+            <MonitorStand />
+            <PCKeyboard>
+              {[
+                "Esc",
+                "F1",
+                "F2",
+                "F3",
+                "F4",
+                "F5",
+                "F6",
+                "F7",
+                "F8",
+                "F9",
+                "F10",
+                "F11",
+                "F12",
+                "Prt",
+                "Del",
+              ].map((k) => (
+                <PCKey key={k}>{k}</PCKey>
+              ))}
+              {[
+                "`",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "0",
+                "-",
+                "=",
+              ].map((k) => (
+                <PCKey key={k}>{k}</PCKey>
+              ))}
+              <PCKey $span={2}>Back</PCKey>
+              <PCKey $span={2}>Tab</PCKey>
+              {["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]"].map(
+                (k) => (
+                  <PCKey key={k}>{k}</PCKey>
+                ),
+              )}
+              <PCKey $span={1}>\</PCKey>
+              <PCKey $span={2}>Caps</PCKey>
+              {["A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'"].map(
+                (k) => (
+                  <PCKey key={k}>{k}</PCKey>
+                ),
+              )}
+              <PCKey $span={2}>Enter</PCKey>
+              <PCKey $span={3}>Shift</PCKey>
+              {["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"].map((k) => (
+                <PCKey key={k}>{k}</PCKey>
+              ))}
+              <PCKey $span={2}>Shift</PCKey>
+              <PCKey>Ctrl</PCKey>
+              <PCKey>Win</PCKey>
+              <PCKey>Alt</PCKey>
+              <PCKey $span={7}>Space</PCKey>
+              <PCKey>Alt</PCKey>
+              <PCKey>Fn</PCKey>
+              <PCKey>Ctrl</PCKey>
+            </PCKeyboard>
+          </PCSetup>
+          <div className="video-description">
+            <h2>Manager's Inventory</h2>
+            <p>
+              Built using React and Redux to manage inventory data efficiently.
+              It allows users to add, edit, and delete entries through a
+              centralized state management system.
+            </p>
+            <div className="skills">
+              {["React", "Redux", "JavaScript", "HTML/CSS"].map((skill) => (
+                <Chip key={skill}>{skill}</Chip>
+              ))}
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <Divider />
         <div className="portfolio-layout">
           <IPhoneFrame>
             <SpeakerDot />
@@ -188,38 +367,6 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <Divider />
-        <div className="portfolio-layout tablet-layout">
-          <div className="video-description">
-            <h2>Manager's Inventory</h2>
-            <p>
-              Built using React and Redux to manage inventory data efficiently.
-              It allows users to add, edit, and delete entries through a
-              centralized state management system.
-            </p>
-            <div className="skills">
-              {["React", "Redux", "JavaScript", "HTML/CSS"].map((skill) => (
-                <Chip key={skill}>{skill}</Chip>
-              ))}
-            </div>
-          </div>
-          <ITabletFrame>
-            {!videosLoaded.inventory && <VideoSkeleton $tablet />}
-            <video
-              autoPlay
-              loop
-              muted
-              onLoadedData={() =>
-                setVideosLoaded((prev) => ({ ...prev, inventory: true }))
-              }
-              style={{ display: videosLoaded.inventory ? "block" : "none" }}
-            >
-              <source src={managerInventoryVideo} type="video/mp4" />
-            </video>
-          </ITabletFrame>
-        </div>
-        <br />
-        <br />
         <Divider />
         <div className="portfolio-layout tablet-layout-reverse">
           <div className="video-description">
