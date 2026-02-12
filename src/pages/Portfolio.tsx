@@ -335,7 +335,6 @@ export default function Portfolio() {
         </div>
         <br />
         <br />
-        <Divider />
         <div className="portfolio-layout">
           <IPhoneFrame>
             <SpeakerDot />
@@ -367,7 +366,7 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <Divider />
+        <br />
         <div className="portfolio-layout tablet-layout-reverse">
           <div className="video-description">
             <h2>Carousel - Slider</h2>
@@ -400,22 +399,7 @@ export default function Portfolio() {
         </div>
         <br />
         <br />
-        <Divider />
         <div className="portfolio-layout tablet-layout">
-          <div className="video-description">
-            <h2>Chat App with NodeJS</h2>
-            <p>
-              This real-time chat application is built with Node.js and
-              Socket.IO to support instant communication between multiple users.
-            </p>
-            <div className="skills">
-              {["JavaScript", "NodeJS", "Socket.io", "HTML/CSS"].map(
-                (skill) => (
-                  <Chip key={skill}>{skill}</Chip>
-                ),
-              )}
-            </div>
-          </div>
           <ITabletFrame>
             {!videosLoaded.chat && <VideoSkeleton $tablet />}
             <video
@@ -430,6 +414,20 @@ export default function Portfolio() {
               <source src={chatNodeJSVideo} type="video/mp4" />
             </video>
           </ITabletFrame>
+          <div className="video-description">
+            <h2>Chat App with NodeJS</h2>
+            <p>
+              This real-time chat application is built with Node.js and
+              Socket.IO to support instant communication between multiple users.
+            </p>
+            <div className="skills">
+              {["JavaScript", "NodeJS", "Socket.io", "HTML/CSS"].map(
+                (skill) => (
+                  <Chip key={skill}>{skill}</Chip>
+                ),
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
