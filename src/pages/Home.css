@@ -16,6 +16,17 @@
   margin-bottom: 2rem;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .profile-header {
     flex-direction: column;
@@ -88,6 +99,10 @@
   color: #323131;
   line-height: 1.6;
   margin-bottom: 2rem;
+}
+
+.main-section {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .section {

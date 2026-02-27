@@ -137,63 +137,66 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home-content">
-        <div className="profile-header">
-          {!imageLoaded && <div className="profile-image-skeleton" />}
-          <img
-            src={profileImage}
-            alt="Henry Granados"
-            className="profile-image"
-            onLoad={() => setImageLoaded(true)}
-            style={{ display: imageLoaded ? "block" : "none" }}
-          />
-          <div className="profile-info" ref={profileRef}>
-            <p className="intro-text">
-              Hi, my name is <span className="name-highlight">Henry</span>
-            </p>
-            <p className="bio">
-              I'm a Lead Software Engineer with{" "}
-              <strong>11+ years of experience</strong> designing, building, and
-              scaling frontend and full-stack web applications. Expert in React,
-              Angular, JavaScript, TypeScript, Java, and modern cloud based
-              architectures. Proven leader with experience mentoring engineers,
-              improving delivery processes, and building high-impact products
-              used by thousands of users.
-            </p>
-          </div>
-        </div>
-        <Divider />
-        <div className="section">
-          <h2>Certifications and Awards</h2>
-          <p>
-            I hold a degree in <strong>Computer Science and Engineering</strong>{" "}
-            and specialize in building modern web applications. I focus on
-            creating efficient, scalable, and user-friendly solutions, and I’m
-            passionate about sharing knowledge and helping others grow. This led
-            me to become a <strong>Certified Mentor</strong> and{" "}
-            <a
-              target="_blank"
-              href="https://www.udemy.com/user/henrygranados/"
-              rel="noopener noreferrer"
-              className="inline-link"
-            >
-              Udemy Instructor
-            </a>
-            , where <strong>I’ve taught thousands of students</strong> and{" "}
-            <strong>maintain a 4.8/5 instructor rating</strong>.
-          </p>
-          <CoursesSection>
-            <CoursesHeader>
-              My <img src={udemyImage} alt="" width={91} height={34} />
-              Courses
-            </CoursesHeader>
-            <div className="skills">
-              {skills.map((skill) => (
-                <Chip key={skill} outline>
-                  {skill}
-                </Chip>
-              ))}
+        <div className="main-section">
+          <div className="profile-header">
+            {!imageLoaded && <div className="profile-image-skeleton" />}
+            <img
+              src={profileImage}
+              alt="Henry Granados"
+              className="profile-image"
+              onLoad={() => setImageLoaded(true)}
+              style={{ display: imageLoaded ? "block" : "none" }}
+            />
+            <div className="profile-info" ref={profileRef}>
+              <p className="intro-text">
+                Hi, my name is <span className="name-highlight">Henry</span>
+              </p>
+              <p className="bio">
+                I'm a Lead Software Engineer with{" "}
+                <strong>11+ years of experience</strong> designing, building,
+                and scaling frontend and full-stack web applications. Expert in
+                React, Angular, JavaScript, TypeScript, Java, and modern cloud
+                based architectures. Proven leader with experience mentoring
+                engineers, improving delivery processes, and building
+                high-impact products used by thousands of users.
+              </p>
             </div>
-          </CoursesSection>
+          </div>
+          <Divider />
+          <div className="section">
+            <h2>Certifications and Awards</h2>
+            <p>
+              I hold a degree in{" "}
+              <strong>Computer Science and Engineering</strong> and specialize
+              in building modern web applications. I focus on creating
+              efficient, scalable, and user-friendly solutions, and I’m
+              passionate about sharing knowledge and helping others grow. This
+              led me to become a <strong>Certified Mentor</strong> and{" "}
+              <a
+                target="_blank"
+                href="https://www.udemy.com/user/henrygranados/"
+                rel="noopener noreferrer"
+                className="inline-link"
+              >
+                Udemy Instructor
+              </a>
+              , where <strong>I’ve taught thousands of students</strong> and{" "}
+              <strong>maintain a 4.8/5 instructor rating</strong>.
+            </p>
+            <CoursesSection>
+              <CoursesHeader>
+                My <img src={udemyImage} alt="" width={91} height={34} />
+                Courses
+              </CoursesHeader>
+              <div className="skills">
+                {skills.map((skill) => (
+                  <Chip key={skill} outline>
+                    {skill}
+                  </Chip>
+                ))}
+              </div>
+            </CoursesSection>
+          </div>
         </div>
 
         <div className="skills-icons-banner">
