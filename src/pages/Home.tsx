@@ -153,7 +153,7 @@ export default function Home() {
               </p>
               <p className="bio">
                 I'm a Lead Software Engineer with{" "}
-                <strong>11+ years of experience</strong> designing, building,
+                <strong>12+ years of experience</strong> designing, building,
                 and scaling frontend and full-stack web applications. Expert in
                 React, Angular, JavaScript, TypeScript, Java, and modern cloud
                 based architectures. Proven leader with experience mentoring
